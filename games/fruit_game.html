@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Catcher Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            overflow: hidden; /* Prevents scrollbars from appearing */
+        }
+        /* Simple modal styles for start/end game messages */
+        .modal {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-sky-600 flex items-center justify-center h-screen">
+
+    <!-- Main Game Container -->
+    <div id="game-wrapper" class="w-full max-w-2xl mx-auto p-4">
+        <div class="bg-white/30 backdrop-blur-sm rounded-xl shadow-2xl p-4 border-2 border-white/50">
+            <!-- Header with Title and Score -->
+            <div class="flex justify-between items-center mb-4 px-2 text-white">
+                <h1 class="text-lg sm:text-2xl">Fruit Catcher</h1>
+                <div class="text-lg sm:text-2xl">
+                    <span>SCORE:</span>
+                    <span id="scoreEl">0</span>
+                </div>
+            </div>
+
+            <!-- The Game Canvas -->
+            <canvas id="gameCanvas" class="bg-white/50 rounded-lg shadow-inner border-2 border-white/50"></canvas>
+            
+            <!-- Instructions -->
+            <div class="text-center text-white mt-4 text-xs sm:text-sm">
+                Use ◀️ and ▶️ arrow keys to move the basket!
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Start Game Message -->
+    <div id="startModal" class="modal">
+        <div class="p-8 bg-white rounded-lg shadow-xl text-gray-800">
+            <h2 class="text-3xl font-bold mb-4">Ready to Play?</h2>
+            <p class="mb-6">Catch as many fruits as you can!</p>
+            <button id="startGameBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                Start Game
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        // --- DOM Elements ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreEl = document.getElementById('scoreEl');
+        const startModal = document.getElementById('startModal');
+        const startGameBtn = document.getElementById('startGameBtn');
+
+        // --- Game Configuration ---
+        let canvasWidth = 600;
+        let canvasHeight = 400;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        let score = 0;
+        let gameRunning = false;
+        const fruitEmojis = ['🍎', '🍌', '🍇', '🍓', '🍊', '🥝', '🍉'];
+
+        // --- Player (Basket) ---
+        const basket = {
+            width: 80,
+            height: 20,
+            x: canvas.width / 2 - 40,
+            y: canvas.height - 30,
+            speed: 15,
+            dx: 0 // change in x direction
+        };
+        
+        // --- Fruits ---
+        let fruits = [];
+        const fruitSpawnRate = 1000; // milliseconds
+        let lastFruitSpawnTime = 0;
+
+        // --- Input Handling ---
+        const keys = {
+            right: false,
+            left: false
+        };
+
+        function keyDown(e) {
+            if (e.key === 'ArrowRight' || e.key === 'Right') {
+                keys.right = true;
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                keys.left = true;
+            }
+        }
+
+        function keyUp(e) {
+            if (e.key === 'ArrowRight' || e.key === 'Right') {
+                keys.right = false;
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                keys.left = false;
+            }
+        }
+
+        document.addEventListener('keydown', keyDown);
+        document.addEventListener('keyup', keyUp);
+
+        // --- Drawing Functions ---
+        function drawBasket() {
+            ctx.beginPath();
+            ctx.rect(basket.x, basket.y, basket.width, basket.height);
+            ctx.fillStyle = '#8B4513'; // SaddleBrown color
+            ctx.fill();
+            ctx.closePath();
+            
+            // Add a little rim to the basket
+            ctx.beginPath();
+            ctx.rect(basket.x - 5, basket.y, basket.width + 10, 5);
+            ctx.fillStyle = '#A0522D'; // Sienna color
+            ctx.fill();
+            ctx.closePath();
+        }
+        
+        function createFruit() {
+            const size = 30;
+            fruits.push({
+                x: Math.random() * (canvas.width - size),
+                y: -size, // Start above the canvas
+                size: size,
+                speed: 2 + Math.random() * 2, // Random speed
+                emoji: fruitEmojis[Math.floor(Math.random() * fruitEmojis.length)]
+            });
+        }
+        
+        function drawFruits() {
+            fruits.forEach(fruit => {
+                ctx.font = `${fruit.size}px serif`;
+                ctx.fillText(fruit.emoji, fruit.x, fruit.y);
+            });
+        }
+
+        // --- Game Logic ---
+        function updateBasketPosition() {
+            basket.x += basket.dx;
+
+            // Wall detection
+            if (basket.x < 0) {
+                basket.x = 0;
+            }
+            if (basket.x + basket.width > canvas.width) {
+                basket.x = canvas.width - basket.width;
+            }
+        }
+
+        function handleMovement() {
+            if (keys.right) {
+                basket.dx = basket.speed;
+            } else if (keys.left) {
+                basket.dx = -basket.speed;
+            } else {
+                basket.dx = 0;
+            }
+        }
+        
+        function updateFruits() {
+            fruits.forEach((fruit, index) => {
+                fruit.y += fruit.speed;
+
+                // Remove fruit if it's off screen
+                if (fruit.y - fruit.size > canvas.height) {
+                    fruits.splice(index, 1);
+                }
+
+                // Collision detection with basket
+                if (
+                    fruit.x < basket.x + basket.width &&
+                    fruit.x + fruit.size > basket.x &&
+                    fruit.y < basket.y + basket.height &&
+                    fruit.y + fruit.size > basket.y
+                ) {
+                    // Fruit caught
+                    score++;
+                    scoreEl.innerText = score;
+                    fruits.splice(index, 1);
+                }
+            });
+        }
+        
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function resizeCanvas() {
+            // The container is the direct parent of the canvas, which has the padding we need to account for.
+            const container = canvas.parentElement;
+            const computedStyle = window.getComputedStyle(container);
+
+            // Calculate the total horizontal padding (left + right) of the container.
+            const paddingX = parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
+            
+            // The canvas width should be the container's available inner width, minus its horizontal padding.
+            const newWidth = container.clientWidth - paddingX;
+
+            canvas.width = newWidth;
+            canvas.height = newWidth * (2 / 3); // Maintain aspect ratio to avoid distortion.
+            
+            // Re-center the basket whenever the canvas is resized.
+            basket.x = canvas.width / 2 - basket.width / 2;
+        }
+
+        // --- Main Game Loop ---
+        function gameLoop(timestamp) {
+            if (!gameRunning) return;
+
+            // Spawn new fruits
+            if (timestamp - lastFruitSpawnTime > fruitSpawnRate) {
+                createFruit();
+                lastFruitSpawnTime = timestamp;
+            }
+
+            clearCanvas();
+            
+            handleMovement();
+            updateBasketPosition();
+            drawBasket();
+
+            updateFruits();
+            drawFruits();
+
+            requestAnimationFrame(gameLoop);
+        }
+        
+        // --- Start & Reset ---
+        function initGame() {
+            score = 0;
+            scoreEl.innerText = 0;
+            fruits = [];
+            basket.x = canvas.width / 2 - basket.width / 2;
+            gameRunning = true;
+            startModal.style.display = 'none';
+            requestAnimationFrame(gameLoop);
+        }
+
+        // --- Event Listeners ---
+        startGameBtn.addEventListener('click', initGame);
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Initial resize to fit the screen correctly on load.
+        resizeCanvas();
+
+    </script>
+
+</body>
+</html>
+
