@@ -2,57 +2,123 @@
 <html lang="en">
 
 <head>
+    <!-- The head section holds important information about the page. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Wonderland</title>
+    <title>Code Wonderland - Game Foundation</title>
 </head>
 
 <body>
-    <!-- this is my Header      -->
-    <header>
-        <nav>
+    <!-- This is our Header. The header element holds the main title and navigation links. -->
+    <header id="main-header">
+        <!-- The navigation element groups all the links used to move around the website. -->
+        <nav class="main-nav">
+            <!-- The unordered list element holds the list items for the navigation links. -->
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="tips">Tips</a></li>
-                <li><a href="contact.html">Contact </a></li>
+                <!-- List Item with a link to the home page. -->
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <!-- List Item with a link to the about page. -->
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <!-- List Item with a link to the tips section. -->
+                <li><a href="tips" class="nav-link">Tips</a></li>
+                <!-- List Item with a link to the contact page. -->
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- First section: Home -->
-    <section id="home"> <!-- Section for the home page -->
+    <!-- We give this section a class name so we can style it easily with CSS later! -->
+    <section id="home" class="content-section">
         <h2>Home</h2> <!-- Title of this section -->
-        <p>Hello, young <b>coders!</b> Today we will learn how to make a game using <strong>javaScript</strong>. 🌟</p>
+        <!-- We use an ID here so JavaScript can easily find this specific paragraph! -->
+        <p id="greeting-text">Hello, young <b>coders!</b> Today we will learn how to make a game using <strong>javaScript</strong>. 🌟</p>
         <!-- Paragraph with a greeting -->
-        <p><u>Are you ready</u> to meet your game <u>characters</u> and <u>learn fun tricks?</u> </p>
+        <!-- We use the line break element <br> to force a new line, like writing poetry! -->
+        <p><u>Are you ready</u> to meet your game <u>characters</u> and <u>learn fun tricks?</u> <br> This is our awesome game! </p>
         <!-- Another paragraph -->
     </section>
 
 
     <!-- this is my second section       -->
-    <section id="characters">
+    <section id="tips">
+        <!-- This section is called "tips" and groups all the content about characters -->
+
         <h2>Meet the characters</h2>
+        <!-- h2 is a big heading, introducing the section -->
 
         <h3> Sparky the Dragon</h3>
+        <!-- h3 is a smaller heading, naming a character -->
+
         <p> Sparky is a brave little dragon who loves to collect shiny gems. ✨</p>
+        <!-- p is a paragraph describing Sparky -->
 
         <h3> Gloomy the Ghost</h3>
+        <!-- Another character heading -->
+
         <img src="./gloomy.jp" alt="Gloomy">
+        <!-- img displays an image of Gloomy
+            src = the path to the image
+            alt = text shown if image doesn't load (good for accessibility) -->
 
         <h3> Accessing an External Link</h3>
-        <p> DO you want to see where this <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> link takes
-            us to</p>
-        
+        <!-- Heading about links -->
+
+        <p> Do you want to see where this 
+            <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> link takes us?
+        </p>
+        <!-- a = hyperlink
+            href = address to go to
+            target="_blank" = opens link in a new tab -->
+
         <h4>Gloomy's Sneaky Plan:</h4>
+        <!-- h4 is a smaller heading -->
+
         <ol>
-            <li>Hide all gems</li>
+            <!-- ol = ordered list (numbered) -->
+            <li>Hide all gems</li> <!-- li = list item -->
             <li>Create spooky illusions.</li>
             <li>Run away after then.</li>
         </ol>
 
-       
+        <!-- Audio section -->
+        <audio 
+            id="game-music"     <!-- unique name to find this audio in JavaScript -->
+            controls            <!-- shows play/pause and volume buttons for user -->
+            autoplay            <!-- tries to start playing automatically -->
+            loop                <!-- repeats the audio forever -->
+            muted               <!-- starts muted (helps autoplay work on all browsers) -->
+            preload="auto"      <!-- tells browser to load audio as soon as possible -->
+            > 
+            <source src="./sound.mp3" type="audio/mpeg">
+            <!-- source = path to audio file
+                type = format of the audio (mp3) -->
+            Your browser does not support the audio element. Game music failed to load.
+            <!-- fallback text if browser can't play audio -->
+        </audio>
+
+        <!-- Video section -->
+        <video 
+            id="video"           <!-- unique name for JavaScript access -->
+            controls             <!-- shows play/pause, volume, and fullscreen buttons -->
+            autoplay             <!-- tries to play automatically -->
+            muted                <!-- starts muted (needed for autoplay) -->
+            loop                 <!-- repeats the video forever -->
+            preload="auto"       <!-- loads video as soon as possible -->
+            playsinline          <!-- keeps video inline on mobile (no fullscreen forced) -->
+            width="640"          <!-- width of the video player -->
+            height="360"         <!-- height of the video player -->
+            poster="poster.jpg"  <!-- image shown before video starts playing -->
+            >
+            <source src="video.mp4" type="video/mp4">
+            <!-- source = path to video file
+                type = format of the video (mp4) -->
+            Your browser does not support the video tag.
+            <!-- fallback text if browser can't play video -->
+        </video>
+
     </section>
+
 
     <!-- this is my third secontion       -->
     <section>
