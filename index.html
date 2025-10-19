@@ -120,15 +120,107 @@
     </section>
 
 
-    <!-- this is my third secontion       -->
-    <section>
+    <!-- ========== NEW SECTION: SCOREBOARD TABLE ========== -->
+<section id="scoreboard">
+    <!-- This section shows a table of players and their scores -->
+
+    <h2>🏆 Player Scoreboard</h2>
+    <!-- h2 = big heading for the section -->
+
+    <!-- Start of the table -->
+    <table 
+        border="4"        <!-- border thickness (how thick the lines are) -->
+        cellpadding="10"  <!-- space inside each cell (makes content not stick to edges) -->
+        cellspacing="5"   <!-- space between cells -->
+        width="70%"       <!-- how wide the table is relative to the page -->
+        align="center"    <!-- positions table in the center of the page -->
+        bgcolor="#f0f8ff" <!-- background color of the table -->
+        bordercolor="blue" <!-- color of the table borders -->
+    >
+        <!-- caption = title shown above the table -->
+        <caption>Game Round Results</caption>
+
+        <!-- Header row -->
+        <tr>
+            <!-- th = table header cell (bold & centered by default) -->
+            <th>Player Name</th>   <!-- Name of the player -->
+            <th>Character</th>     <!-- Character chosen by the player -->
+            <th>Score</th>         <!-- Player's points -->
+            <th>Level Reached</th> <!-- Last level the player reached -->
+        </tr>
+
+        <!-- 1st data row -->
+        <tr>
+            <td>Emma</td>       <!-- td = table data cell -->
+            <td>Sparky</td>     
+            <td>850</td>        
+            <td>Level 5</td>    
+        </tr>  
+
+        <!-- 2nd data row -->
+        <tr>
+            <td>Inna</td>
+            <td>Spooky</td>
+            <td>80</td>
+            <td>Level 2</td>
+        </tr> 
+
+    </table>
+    <!-- End of table -->
+
+</section>
+<!-- End of scoreboard section -->
 
 
+    <!-- ========== NEW SECTION: PLAYER SIGN-UP FORM ========== -->
+    <section id="signup">
+        <h2>📝 Join the Adventure!</h2>
+
+        <form>
+            <!-- Text Input -->
+            <label for="player-name">Player Name:</label>
+            <input type="text" id="player-name" name="player-name" placeholder="Enter your name" required>
+            <br><br>
+
+            <!-- Email Input -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br><br>
+
+            <!-- Dropdown Selection -->
+            <label for="character">Choose Your Character:</label>
+            <select id="character" name="character">
+                <option value="sparky">Sparky the Dragon</option>
+                <option value="gloomy">Gloomy the Ghost</option>
+                <option value="pixie">Pixie the Elf</option>
+            </select>
+            <br><br>
+
+            <!-- Textarea -->
+            <label for="message">Your Player Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30" placeholder="Write something fun..."></textarea>
+            <br><br>
+
+            <!-- Buttons -->
+            <button type="submit">Join Game</button>
+            <button type="reset">Clear</button>
+        </form>
     </section>
 
-    <!-- this is my Footer      -->
-    <footer>
+    <!-- ========== NEW SECTION: ARTICLE & ASIDE ========== -->
+    <article>
+        <h2>Developer Notes</h2>
+        <p>This <span style="font-weight:bold;">Code Wonderland</span> project teaches kids how to build a fun, interactive game website using simple HTML first, then CSS and JavaScript later.</p>
+    </article>
 
+    <aside>
+        <h3>💡 Quick Tip</h3>
+        <p>Always close your tags properly! HTML works best when it’s neat and clean.</p>
+    </aside>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; 2025 Code Wonderland. Built with ❤️ by young coders.</p>
     </footer>
 
 </body>
