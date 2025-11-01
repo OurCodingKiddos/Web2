@@ -207,7 +207,142 @@
         </form>
     </section>
 
- 
+
+    <!-- ========== NEW SECTION: HTML FUN LESSONS 🎨🌍 ========== -->
+<section id="html-fun-lessons">
+    <h2>🎨🌍 Fun HTML Lessons: Characters, Canvas, and Iframes</h2>
+
+    <p>In this section, we will explore three exciting HTML topics: 
+        <strong>Character Gallery</strong>, <strong>Canvas Playground</strong>, and <strong>Iframes</strong>.
+        Each part is purely HTML — no CSS or JavaScript needed — perfect for learning step by step!
+    </p>
+
+    <!-- =================== CHARACTER GALLERY =================== -->
+    <h3>1️⃣ Character Gallery</h3>
+    <p>Below are our game characters. Each picture uses &lt;figure&gt; and &lt;figcaption&gt; for semantic labeling.</p>
+
+    <!-- Character 1 -->
+    <figure>
+        <!-- img = displays an image -->
+        <!-- src = path to the image file -->
+        <!-- alt = description for accessibility -->
+        <!-- width = size of the image -->
+        <img src="./sparky.jpg" alt="Sparky the Dragon" width="200">
+        <!-- figcaption = label under the image -->
+        <figcaption>🔥 Sparky the Dragon</figcaption>
+    </figure>
+
+    <!-- Character 2 -->
+    <figure>
+        <img src="./gloomy.jpg" alt="Gloomy the Ghost" width="200">
+        <figcaption>👻 Gloomy the Ghost</figcaption>
+    </figure>
+
+    <!-- Character 3 -->
+    <figure>
+        <img src="./pixie.jpg" alt="Pixie the Elf" width="200">
+        <figcaption>🧚 Pixie the Elf</figcaption>
+    </figure>
+
+    <p>Try changing the <code>width</code> numbers to make characters bigger or smaller!</p>
+
+    <!-- =================== CANVAS INTRO =================== -->
+    <h3>2️⃣ Canvas Playground (HTML Only)</h3>
+    <p>
+        The <strong>&lt;canvas&gt;</strong> tag creates a blank drawing area.
+        Later we will use JavaScript to draw shapes, characters, or games. 
+        For now, we are just placing it on the page.
+    </p>
+
+    <!-- The canvas element -->
+    <!-- id = unique name to reference later in JavaScript -->
+    <!-- width = horizontal size -->
+    <!-- height = vertical size -->
+    <canvas id="myCanvas" width="600" height="300"></canvas>
+
+    <p>
+        Right now, it is empty because drawing requires JavaScript.
+        But it’s a good start to understand how the canvas is placed on the page.
+    </p>
+
+    <h4>🧠 Key Points to Remember</h4>
+    <ul>
+        <li>&lt;canvas&gt; creates a drawing area</li>
+        <li><strong>width</strong> controls how wide it is</li>
+        <li><strong>height</strong> controls how tall it is</li>
+        <li>It does nothing yet — drawing comes later with JavaScript</li>
+    </ul>
+
+    <h4>Try This!</h4>
+    <p>Change the width and height numbers and refresh the page to see how the canvas size changes.</p>
+
+    <pre>
+&lt;canvas id="myCanvas" width="300" height="150"&gt;&lt;/canvas&gt;
+    </pre>
+
+    <!-- =================== IFRAME & EMBEDDED CONTENT =================== -->
+    <h3>3️⃣ Explore the World with Iframes</h3>
+    <p>
+        The <strong>&lt;iframe&gt;</strong> tag lets us embed another webpage, video, or map inside our own page.
+        Think of it as a magic window to another world!
+    </p>
+
+    <h4>Example 1: YouTube Video</h4>
+    <p>Embed a video directly in your page.</p>
+    <iframe 
+        width="560" 
+        height="315"
+        src="https://www.youtube.com/watch?v=O78CxqRl7NE&pp=ugUEEgJlbg%3D%3D" 
+        title="YouTube video player"
+        allowfullscreen>
+    </iframe>
+
+    <h4>Example 2: Google Map</h4>
+    <p>Show a location or game studio on a map!</p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.4251382182524!2d-122.08424908467918!3d37.42206597982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0b3f07e4c7d%3A0xdef6a3b7b5b66c09!2sGoogleplex!5e0!3m2!1sen!2sus!4v1615804698182!5m2!1sen!2sus"
+        width="560" 
+        height="315"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+
+    <h4>Example 3: Another Website</h4>
+    <p>We can display another webpage inside our page, like W3Schools!</p>
+    <iframe 
+        src="https://www.w3schools.com" 
+        width="560" 
+        height="315">
+    </iframe>
+
+    <h4>🧠 Key Points to Remember</h4>
+    <ul>
+        <li>&lt;iframe&gt; = inline frame</li>
+        <li>Allows embedding of videos, maps, or entire webpages</li>
+        <li><strong>src</strong> = URL of the content to display</li>
+        <li><strong>width</strong> & <strong>height</strong> = size of the window</li>
+        <li><strong>allowfullscreen</strong> lets users watch in full screen</li>
+    </ul>
+
+    <!-- =================== END OF COMBINED SECTION =================== -->
+    <p>Great job! You’ve learned three new HTML concepts:
+        <strong>figures</strong>, <strong>canvas</strong>, and <strong>iframes</strong>.
+        Each of them adds more power and fun to your webpages.
+    </p>
+</section>
+
+
+    <!-- ========== NEW SECTION: ARTICLE & ASIDE ========== -->
+    <article>
+        <h2>Developer Notes</h2>
+        <p>This <span style="font-weight:bold;">Code Wonderland</span> project teaches kids how to build a fun, interactive game website using simple HTML first, then CSS and JavaScript later.</p>
+    </article>
+
+    <aside>
+        <h3>💡 Quick Tip</h3>
+        <p>Always close your tags properly! HTML works best when it’s neat and clean.</p>
+    </aside>
+
     <!-- ========== FOOTER ========== -->
     <footer>
     </footer>
