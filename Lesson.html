@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Code Wonderland - Game Foundation</title>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="tips" class="nav-link">Tips</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content-section">
+        <h2>Home</h2>
+        <p id="greeting-text">Hello, young <b>coders!</b> Today we will learn how to make a game using <strong>javaScript</strong>. 🌟</p>
+        <p><u>Are you ready</u> to meet your game <u>characters</u> and <u>learn fun tricks?</u> <br> This is our awesome game! </p>
+    </section>
+
+    <section id="tips">
+        <h2>Meet the characters</h2>
+        <h3> Sparky the Dragon</h3>
+        <p> Sparky is a brave little dragon who loves to collect shiny gems. ✨</p>
+        <h3> Gloomy the Ghost</h3>
+        <img src="./gloomy.jp" alt="Gloomy">
+        <h3> Accessing an External Link</h3>
+        <p> Do you want to see where this 
+            <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> link takes us?
+        </p>
+        <h4>Gloomy's Sneaky Plan:</h4>
+        <ol>
+            <li>Hide all gems</li>
+            <li>Create spooky illusions.</li>
+            <li>Run away after then.</li>
+        </ol>
+
+        <audio 
+            id="game-music"
+            controls
+            autoplay
+            loop
+            muted
+            preload="auto">
+            <source src="./sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element. Game music failed to load.
+        </audio>
+
+        <video 
+            id="video"
+            controls
+            autoplay
+            muted
+            loop
+            preload="auto"
+            playsinline
+            width="640"
+            height="360"
+            poster="poster.jpg">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="scoreboard">
+        <h2>Player Scoreboard</h2>
+        <table 
+            border="4"
+            cellpadding="10"
+            cellspacing="5"
+            width="70%"
+            align="center"
+            bgcolor="#f0f8ff"
+            bordercolor="blue">
+            <caption>Game Round Results</caption>
+            <tr>
+                <th>Player Name</th>
+                <th>Character</th>
+                <th>Score</th>
+                <th>Level Reached</th>
+            </tr>
+            <tr>
+                <td>Emma</td>
+                <td>Sparky</td>
+                <td>850</td>
+                <td>Level 5</td>
+            </tr>
+            <tr>
+                <td>Inna</td>
+                <td>Spooky</td>
+                <td>80</td>
+                <td>Level 2</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="signup">
+        <h2>Join the Adventure!</h2>
+        <form>
+            <label for="player-name">Player Name:</label>
+            <input type="text" id="player-name" name="player-name" placeholder="Enter your name" required>
+            <br><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br><br>
+            <label for="character">Choose Your Character:</label>
+            <select id="character" name="character">
+                <option value="sparky">Sparky the Dragon</option>
+                <option value="gloomy">Gloomy the Ghost</option>
+                <option value="pixie">Pixie the Elf</option>
+            </select>
+            <br><br>
+            <label for="message">Your Player Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30" placeholder="Write something fun..."></textarea>
+            <br><br>
+            <button type="submit">Join Game</button>
+            <button type="reset">Clear</button>
+        </form>
+    </section>
+
+    <section id="html-fun-lessons">
+        <h2>Fun HTML Lessons: Characters, Canvas, and Iframes</h2>
+        <p>In this section, we will explore three exciting HTML topics: 
+            <strong>Character Gallery</strong>, <strong>Canvas Playground</strong>, and <strong>Iframes</strong>.
+            Each part is purely HTML — no CSS or JavaScript needed — perfect for learning step by step!
+        </p>
+
+        <h3>Character Gallery</h3>
+        <p>Below are our game characters. Each picture uses &lt;figure&gt; and &lt;figcaption&gt; for semantic labeling.</p>
+
+        <figure>
+            <img src="./sparky.jpg" alt="Sparky the Dragon" width="200">
+            <figcaption>Sparky the Dragon</figcaption>
+        </figure>
+
+        <figure>
+            <img src="./gloomy.jpg" alt="Gloomy the Ghost" width="200">
+            <figcaption>Gloomy the Ghost</figcaption>
+        </figure>
+
+        <figure>
+            <img src="./pixie.jpg" alt="Pixie the Elf" width="200">
+            <figcaption>Pixie the Elf</figcaption>
+        </figure>
+
+        <p>Try changing the <code>width</code> numbers to make characters bigger or smaller!</p>
+
+        <h3>Canvas Playground (HTML Only)</h3>
+        <p>
+            The <strong>&lt;canvas&gt;</strong> tag creates a blank drawing area.
+            Later we will use JavaScript to draw shapes, characters, or games. 
+            For now, we are just placing it on the page.
+        </p>
+
+        <canvas id="myCanvas" width="600" height="300"></canvas>
+
+        <p>
+            Right now, it is empty because drawing requires JavaScript.
+            But it's a good start to understand how the canvas is placed on the page.
+        </p>
+
+        <h4>Key Points to Remember</h4>
+        <ul>
+            <li>&lt;canvas&gt; creates a drawing area</li>
+            <li><strong>width</strong> controls how wide it is</li>
+            <li><strong>height</strong> controls how tall it is</li>
+            <li>It does nothing yet — drawing comes later with JavaScript</li>
+        </ul>
+
+        <h4>Try This!</h4>
+        <p>Change the width and height numbers and refresh the page to see how the canvas size changes.</p>
+
+        <pre>
+&lt;canvas id="myCanvas" width="300" height="150"&gt;&lt;/canvas&gt;
+        </pre>
+
+        <h3>Explore the World with Iframes</h3>
+        <p>
+            The <strong>&lt;iframe&gt;</strong> tag lets us embed another webpage, video, or map inside our own page.
+            Think of it as a magic window to another world!
+        </p>
+
+        <h4>Example 1: YouTube Video</h4>
+        <p>Embed a video directly in your page.</p>
+        <iframe 
+            width="560" 
+            height="315"
+            src="https://www.youtube.com/watch?v=O78CxqRl7NE&pp=ugUEEgJlbg%3D%3D" 
+            title="YouTube video player"
+            allowfullscreen>
+        </iframe>
+
+        <h4>Example 2: Google Map</h4>
+        <p>Show a location or game studio on a map!</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.4251382182524!2d-122.08424908467918!3d37.42206597982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0b3f07e4c7d%3A0xdef6a3b7b5b66c09!2sGoogleplex!5e0!3m2!1sen!2sus!4v1615804698182!5m2!1sen!2sus"
+            width="560" 
+            height="315"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+        <h4>Example 3: Another Website</h4>
+        <p>We can display another webpage inside our page, like W3Schools!</p>
+        <iframe 
+            src="https://www.w3schools.com" 
+            width="560" 
+            height="315">
+        </iframe>
+
+        <h4>Key Points to Remember</h4>
+        <ul>
+            <li>&lt;iframe&gt; = inline frame</li>
+            <li>Allows embedding of videos, maps, or entire webpages</li>
+            <li><strong>src</strong> = URL of the content to display</li>
+            <li><strong>width</strong> & <strong>height</strong> = size of the window</li>
+            <li><strong>allowfullscreen</strong> lets users watch in full screen</li>
+        </ul>
+
+        <p>Great job! You've learned three new HTML concepts:
+            <strong>figures</strong>, <strong>canvas</strong>, and <strong>iframes</strong>.
+            Each of them adds more power and fun to your webpages.
+        </p>
+    </section>
+
+    <article>
+        <h2>Developer Notes</h2>
+        <p>This <span>Code Wonderland</span> project teaches kids how to build a fun, interactive game website using simple HTML first, then CSS and JavaScript later.</p>
+    </article>
+
+    <aside>
+        <h3>Quick Tip</h3>
+        <p>Always close your tags properly! HTML works best when it's neat and clean.</p>
+    </aside>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>

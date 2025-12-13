@@ -1,0 +1,3191 @@
+/* 
+  ===========================================================================
+  CODE WONDERLAND - CSS STYLING LESSON FOR KIDS
+  ===========================================================================
+  
+  Welcome to the most colorful CSS file ever! 
+  This file is like a magic paintbox for our website.
+  
+  CSS stands for: Cascading Style Sheets
+  
+  Think of it like this:
+  - HTML = The skeleton/bones of our website (structure)
+  - CSS = The skin, clothes, and makeup (appearance)
+  - JavaScript = The muscles and brain (interactivity)
+  
+  Let's explore each part together!
+*/
+
+/* 
+  ===========================================================================
+  PART 1: GLOBAL STYLES & RESETS - THE FOUNDATION
+  ===========================================================================
+  These styles are like the rules for our entire website playground.
+  They make sure everything starts from a clean, consistent place.
+*/
+
+/* 
+  The UNIVERSAL SELECTOR (*) - The "Everyone" Rule
+  This asterisk (*) means "EVERY single element on the page"
+  Think of it like giving the same rule to ALL toys in the toy box.
+*/
+* {
+    /* 
+      MARGIN = Space OUTSIDE an element (like personal space bubbles)
+      We set it to 0 to remove ALL default spacing around everything.
+      This is like making sure no toys are touching each other at all.
+    */
+    margin: 0;
+    
+    /* 
+      PADDING = Space INSIDE an element (like cushioning inside a box)
+      We set it to 0 to remove ALL default inner spacing.
+      This is like emptying out the insides of all boxes.
+    */
+    padding: 0;
+    
+    /* 
+      BOX-SIZING = How we measure elements
+      border-box = "Include padding and border in the total width/height"
+      
+      Imagine you have a box that's 100px wide:
+      - WITHOUT border-box: If you add 10px padding, box becomes 120px wide
+      - WITH border-box: If you add 10px padding, box STAYS 100px wide
+                    (content becomes 80px wide instead)
+      
+      This makes math MUCH easier!
+    */
+    box-sizing: border-box;
+}
+
+/* 
+  The BODY Selector - The "Website Canvas" Rule
+  The <body> tag contains ALL visible content on our page.
+  This is like the paper we're drawing our website on.
+*/
+body {
+    /* 
+      FONT-FAMILY = Which font style to use
+      We list multiple fonts as backups:
+      1. 'Comic Sans MS' - Our first choice (fun and readable)
+      2. 'Arial Rounded MT Bold' - Second choice if first isn't available
+      3. sans-serif - ANY sans-serif font if others aren't available
+      
+      Fonts are like handwriting styles for our computer!
+    */
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+    
+    /* 
+      BACKGROUND-COLOR = The color of our "paper"
+      #f0f8ff is a HEX COLOR CODE (like a secret color recipe)
+      This color is called "Alice Blue" - a very light blue
+      HEX colors work like this: #RRGGBB (Red, Green, Blue)
+      Each letter can be 0-9 or A-F (F is brightest)
+    */
+    background-color: #f0f8ff;
+    
+    /* 
+      LINE-HEIGHT = Space between lines of text
+      1.6 means "1.6 times the font size"
+      This makes text easier to read (like double-spacing in school)
+      Normal is about 1.2, so 1.6 gives us more breathing room!
+    */
+    line-height: 1.6;
+    
+    /* 
+      COLOR = The color of our text (ink color)
+      #333 is a shortcut for #333333 (dark gray)
+      Using dark text on light background = easy to read!
+    */
+    color: #333;
+}
+
+/* 
+  ===========================================================================
+  PART 2: HEADER & NAVIGATION - THE WEBSITE HAT
+  ===========================================================================
+  The header is like a hat for our website, and navigation is like a map
+  that helps us find different rooms (pages) in our website house.
+*/
+
+/* 
+  The #main-header Selector - The "Special Hat" Rule
+  The # symbol means we're selecting by ID (like a person's name).
+  IDs are UNIQUE - only ONE element can have id="main-header"
+  This is our website's special hat!
+*/
+#main-header {
+    /* 
+      BACKGROUND with LINEAR-GRADIENT = Color fading effect
+      "to right" = Colors fade from left to right
+      #ff6b6b = Coral pink color (like a flamingo!)
+      #4ecdc4 = Turquoise blue color (like ocean water)
+      The colors blend together like a beautiful sunset!
+    */
+    background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+    
+    /* 
+      PADDING with TWO VALUES = Space inside our header
+      20px 0 means:
+      - 20px on TOP and BOTTOM (up/down space)
+      - 0px on LEFT and RIGHT (side space)
+      px = pixels (tiny dots on your screen)
+    */
+    padding: 20px 0;
+    
+    /* 
+      POSITION: STICKY = Magic glue for elements!
+      This makes our header STICK to the top when we scroll.
+      Try scrolling down - the header stays at the top like magic!
+    */
+    position: sticky;
+    
+    /* 
+      TOP: 0 = "Stick 0 pixels from the top"
+      This tells our sticky header exactly WHERE to stick.
+      0 means "right at the very top edge of the screen"
+    */
+    top: 0;
+    
+    /* 
+      Z-INDEX = The "stacking order" (like layers in a cake)
+      Higher number = Closer to the front
+      1000 is a VERY high number, so our header will be ABOVE everything
+      This prevents other content from covering our header.
+    */
+    z-index: 1000;
+    
+    /* 
+      BOX-SHADOW = Adds a shadow effect (like in real life!)
+      0 4px 10px means:
+      - 0 = No horizontal offset (shadow is directly below)
+      - 4px = 4 pixels DOWN (vertical offset)
+      - 10px = How blurry/spread out the shadow is
+      rgba(0, 0, 0, 0.2) = Color with transparency:
+        - 0, 0, 0 = Black color (no red, no green, no blue)
+        - 0.2 = 20% opacity (mostly see-through)
+    */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  The .main-nav ul Selector - The "Navigation List" Rule
+  .main-nav means class="main-nav" (classes can be reused)
+  ul means <ul> tag (Unordered List - bullet point lists)
+  This selects ALL unordered lists INSIDE elements with class="main-nav"
+*/
+.main-nav ul {
+    /* 
+      LIST-STYLE-TYPE: NONE = Remove bullet points
+      By default, <ul> lists show bullet points (•)
+      We remove them because we want custom-designed buttons instead!
+    */
+    list-style-type: none;
+    
+    /* 
+      DISPLAY: FLEX = The magical layout tool!
+      Flexbox is like having an invisible elastic band that arranges items.
+      It can put things in rows, columns, center them, space them out - magic!
+      display: flex makes children items (the <li> tags) line up in a row.
+    */
+    display: flex;
+    
+    /* 
+      JUSTIFY-CONTENT: CENTER = Center items horizontally
+      This works because of display: flex (the magic elastic!)
+      It takes all the list items and pushes them to the CENTER of the container.
+    */
+    justify-content: center;
+    
+    /* 
+      FLEX-WRAP: WRAP = Allow items to wrap to new lines
+      If there's not enough space, items will drop to the next line.
+      Like when you have too many toys on a shelf, some go to the next shelf!
+    */
+    flex-wrap: wrap;
+    
+    /* 
+      GAP = Space BETWEEN flex items
+      30px means 30 pixels of space between each navigation link.
+      This is better than using margins because it ONLY adds space BETWEEN items,
+      not on the outside edges.
+    */
+    gap: 30px;
+}
+
+/* 
+  The .nav-link Selector - The "Clickable Buttons" Rule
+  This selects ALL elements with class="nav-link" (our navigation links)
+  These are the actual clickable buttons in our navigation!
+*/
+.nav-link {
+    /* 
+      TEXT-DECORATION: NONE = Remove underline from links
+      By default, <a> tags (links) are blue and underlined.
+      We want to style them as buttons instead!
+    */
+    text-decoration: none;
+    
+    /* 
+      COLOR: WHITE = Make text color white
+      White shows up well on our colorful gradient background!
+    */
+    color: white;
+    
+    /* 
+      FONT-SIZE = How big the text is
+      20px means 20 pixels tall (about the size of a pencil eraser)
+    */
+    font-size: 20px;
+    
+    /* 
+      FONT-WEIGHT: BOLD = Make text thicker/darker
+      This makes our navigation text stand out more!
+      Other options: normal, lighter, bolder, or numbers 100-900
+    */
+    font-weight: bold;
+    
+    /* 
+      PADDING with TWO VALUES = Space inside our button
+      10px 20px means:
+      - 10px on TOP and BOTTOM
+      - 20px on LEFT and RIGHT
+      This makes our buttons nice and clickable!
+    */
+    padding: 10px 20px;
+    
+    /* 
+      BORDER-RADIUS = Round the corners!
+      25px means "make the corners 25 pixels round"
+      Higher numbers = more round (circles!), lower numbers = slightly round
+      This gives us nice pill-shaped buttons!
+    */
+    border-radius: 25px;
+    
+    /* 
+      BACKGROUND-COLOR with RGBA = Color with see-through effect
+      rgba(255, 255, 255, 0.2) means:
+      - 255, 255, 255 = White color (maximum red, green, and blue)
+      - 0.2 = 20% opacity (80% see-through, like frosted glass!)
+      This creates a subtle, modern button effect.
+    */
+    background-color: rgba(255, 255, 255, 0.2);
+    
+    /* 
+      TRANSITION = Smooth animation between changes
+      "all" = Animate ALL properties that change
+      "0.3s" = Take 0.3 seconds to complete the animation
+      "ease" = Start slow, speed up, end slow (natural movement)
+      This makes our hover effects smooth instead of sudden!
+    */
+    transition: all 0.3s ease;
+}
+
+/* 
+  The .nav-link:hover Selector - The "Button Hover Magic" Rule
+  :hover is a PSEUDO-CLASS - it only applies when you MOUSE OVER an element!
+  This is like saying "When someone hovers over a .nav-link, do these things"
+  It makes our website feel alive and interactive!
+*/
+.nav-link:hover {
+    /* 
+      Change background to SOLID white on hover
+      This makes the button "pop out" when you mouse over it!
+    */
+    background-color: white;
+    
+    /* 
+      Change text color to coral pink on hover
+      This creates nice contrast against the white background!
+    */
+    color: #ff6b6b;
+    
+    /* 
+      TRANSFORM: TRANSLATE-Y = Move element up/down
+      -3px means "move 3 pixels UP" (negative = up, positive = down)
+      This makes the button look like it's lifting off the page!
+    */
+    transform: translateY(-3px);
+    
+    /* 
+      Add a stronger shadow on hover
+      This makes the lifted effect more dramatic!
+      The shadow is darker (0.3 opacity) and more spread out (15px blur)
+    */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+  ===========================================================================
+  PART 3: HOME SECTION - THE WELCOME MAT
+  ===========================================================================
+  This is the first thing visitors see - our welcome message and introduction!
+  Think of it like the front porch of our website house.
+*/
+
+/* 
+  The #home Selector - Our "Welcome Section" Rule
+  This styles the section with id="home" in our HTML.
+*/
+#home {
+    /* 
+      BACKGROUND-COLOR: SKYBLUE = A beautiful light blue
+      This is a NAMED COLOR - CSS knows about 140+ color names!
+      Other fun named colors: hotpink, limegreen, goldenrod, chocolate!
+    */
+    background-color: skyblue;
+    
+    /* 
+      PADDING: 30px = Space inside on ALL sides
+      One number means "same on all four sides: top, right, bottom, left"
+      This gives our content room to breathe inside the section.
+    */
+    padding: 30px;
+    
+    /* 
+      MARGIN with FOUR VALUES = Space outside on each side
+      30px 40px 70px 50px means:
+      - 30px = TOP margin (space above)
+      - 40px = RIGHT margin (space to the right)
+      - 70px = BOTTOM margin (space below - extra big!)
+      - 50px = LEFT margin (space to the left)
+      
+      Think: "TRouBLe" = Top, Right, Bottom, Left (clockwise from top)
+    */
+    margin: 30px 40px 70px 50px;
+    
+    /* 
+      BORDER = The outline around our section
+      5px = Thickness (5 pixels thick)
+      solid = Not dashed or dotted - a continuous line
+      rgba(255, 0, 0, 0.534) = Red with 53.4% opacity (semi-transparent)
+      
+      RGBA breakdown:
+      - 255 = Maximum RED (bright red!)
+      - 0 = No GREEN
+      - 0 = No BLUE
+      - 0.534 = 53.4% opacity (46.6% see-through)
+    */
+    border: 5px solid rgba(255, 0, 0, 0.534);
+    
+    /* 
+      BORDER-RADIUS: 20px = Round all corners
+      This makes our section look like a rounded rectangle or pill shape.
+      Perfect for a friendly, modern look!
+    */
+    border-radius: 20px;
+    
+    /* 
+      TEXT-ALIGN: CENTER = Center text horizontally
+      This centers ALL text inside the #home section.
+      Works for headings, paragraphs, and any other text elements!
+    */
+    text-align: center;
+}
+
+/* 
+  The #home:hover Selector - The "Home Section Hover Surprise" Rule
+  When someone hovers over our entire home section, something magical happens!
+*/
+#home:hover {
+    /* 
+      Change background to GREEN on hover
+      Like magic, the entire section turns green when you mouse over it!
+    */
+    background-color: green;
+    
+    /* 
+      Change ALL text color to YELLOW on hover
+      Yellow on green = high contrast = easy to read!
+      This affects ALL text inside: headings, paragraphs, everything!
+    */
+    color: yellow;
+    
+    /* 
+      Shrink ALL text to 10px on hover
+      10px is very small! This creates a surprising effect.
+      All text suddenly gets tiny when you hover!
+    */
+    font-size: 10px;
+    
+    /* 
+      Smooth transition for ALL changes
+      This makes the color change, text color change, and size change
+      all happen smoothly over 0.5 seconds (half a second).
+    */
+    transition: all 0.5s ease;
+}
+
+/* 
+  ===========================================================================
+  PART 4: TIPS SECTION - MEET THE CHARACTERS!
+  ===========================================================================
+  This is where we introduce Sparky the Dragon and Gloomy the Ghost!
+  Think of it like the character introduction scene in a game or movie.
+*/
+
+/* 
+  The #tips Selector - Our "Character Introduction" Section
+  This styles the section with id="tips" where we meet our game characters.
+*/
+#tips {
+    /* 
+      Bright YELLOW background - like sunshine!
+      Yellow grabs attention and feels happy and energetic.
+      Perfect for introducing fun game characters!
+    */
+    background-color: yellow;
+    
+    /* 
+      20px padding inside = gives our content breathing room
+      All four sides get equal space inside the yellow section.
+    */
+    padding: 20px;
+    
+    /* 
+      40px margin outside = separates this section from others
+      Creates a nice buffer zone around our yellow character area.
+    */
+    margin: 40px;
+    
+    /* 
+      Base font size for everything in this section
+      15px is slightly smaller than normal (normal is about 16px).
+      This makes our character descriptions easy to read!
+    */
+    font-size: 15px;
+    
+    /* 
+      Default text color for this section
+      Red text on yellow background = high contrast = easy to read!
+      But we'll override this for specific elements below.
+    */
+    color: red;
+}
+
+/* 
+  The #tips h2 Selector - The "Meet the Characters" Heading
+  This selects ONLY <h2> headings that are INSIDE the #tips section.
+  Specificity: #tips h2 is MORE specific than just #tips
+*/
+#tips h2 {
+    /* 
+      Override the red color from #tips
+      Black text stands out nicely on yellow background.
+      Specificity rules: #tips h2 wins over #tips for h2 elements!
+    */
+    color: black;
+    
+    /* 
+      50px margin on TOP = extra space above the heading
+      This pushes the heading down from the top of the section.
+      Creates a nice visual separation.
+    */
+    margin-top: 50px;
+    
+    /* 
+      Center the heading text
+      "Meet the characters" will be centered in the section.
+    */
+    text-align: center;
+    
+    /* 
+      Make the heading BIG - 32 pixels tall!
+      Headings should be larger than normal text to stand out.
+    */
+    font-size: 32px;
+    
+    /* 
+      TEXT-SHADOW = Adds a subtle shadow behind text
+      2px 2px 4px rgba(0, 0, 0, 0.2) means:
+      - 2px right offset
+      - 2px down offset
+      - 4px blur radius
+      - rgba(0,0,0,0.2) = black at 20% opacity
+      
+      This makes text look like it's slightly floating above the background!
+    */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  The #tips h3 Selector - Character Names (Sparky, Gloomy)
+  This styles the <h3> tags inside our #tips section.
+  These are our character names!
+*/
+#tips h3 {
+    /* 
+      BROWN color for character names
+      Brown feels earthy and natural - good for characters!
+    */
+    color: brown;
+    
+    /* 
+      30px space above each character name
+      This separates character sections from each other.
+    */
+    margin-top: 30px;
+    
+    /* 
+      BORDER-BOTTOM = Add a line UNDER the text
+      2px = Thickness (2 pixels)
+      solid = Continuous line (not dashed)
+      brown = Same color as the text
+      
+      This visually separates character names from their descriptions.
+    */
+    border-bottom: 2px solid brown;
+    
+    /* 
+      10px padding below the text (inside the border)
+      This adds space between the text and the border line.
+      Makes it look nicer!
+    */
+    padding-bottom: 10px;
+    
+    /* 
+      DISPLAY: INLINE-BLOCK = Special display type
+      By default, <h3> is display: block (takes full width)
+      inline-block = Only as wide as the content, but can have margins/padding
+      
+      This makes the brown border only as wide as the text, not the whole line!
+    */
+    display: inline-block;
+}
+
+/* 
+  The #tips h4 Selector - Sub-headings ("Gloomy's Sneaky Plan:")
+  This styles the <h4> tags (smaller headings) in our tips section.
+*/
+#tips h4 {
+    /* 
+      GREY color for sub-headings
+      Grey is less prominent than black or brown - perfect for sub-headings!
+    */
+    color: grey;
+    
+    /* 
+      30px space above each sub-heading
+      Creates separation from the content above.
+    */
+    margin-top: 30px;
+    
+    /* 
+      FONT-STYLE: ITALIC = Slanted text
+      Italics add emphasis and style.
+      Often used for titles, foreign words, or special terms.
+    */
+    font-style: italic;
+}
+
+/* 
+  The #tips ol Selector - Gloomy's Ordered List (Step-by-Step Plan)
+  This styles the <ol> (Ordered List = numbered list) in our tips section.
+  This is Gloomy's sneaky step-by-step plan!
+*/
+#tips ol {
+    /* 
+      PURPLE background for the entire list
+      Purple feels mysterious and magical - perfect for Gloomy's plan!
+    */
+    background-color: purple;
+    
+    /* 
+      PADDING with TWO VALUES for the list background
+      20px 400px means:
+      - 20px = Top and bottom padding inside the purple area
+      - 400px = Left and right padding (makes it very wide!)
+      
+      This creates a wide purple rectangle behind our list items.
+    */
+    padding: 20px 400px;
+    
+    /* 
+      Center the text inside the purple background
+      This centers the numbered list items.
+    */
+    text-align: center;
+    
+    /* 
+      LIST-STYLE-POSITION: INSIDE = Numbers INSIDE the purple background
+      By default, numbers appear OUTSIDE the background (to the left).
+      "inside" puts them INSIDE the purple rectangle with the text.
+    */
+    list-style-position: inside;
+    
+    /* 
+      15px border radius on the purple background
+      Rounds the corners of the purple rectangle.
+      Makes it look softer and friendlier!
+    */
+    border-radius: 15px;
+    
+    /* 
+      MARGIN with TWO VALUES = Center the list horizontally
+      20px auto means:
+      - 20px = Top and bottom margin (space above and below)
+      - auto = Automatic left and right margin (centers the element!)
+      
+      "auto" for left/right margins = equal space on both sides = centered!
+    */
+    margin: 20px auto;
+    
+    /* 
+      MAX-WIDTH: 800px = Maximum width limit
+      Even with 400px padding, the list won't get wider than 800px.
+      This prevents it from becoming TOO wide on large screens.
+    */
+    max-width: 800px;
+}
+
+/* 
+  The #tips ol li Selector - Each Step in Gloomy's Plan
+  This styles the <li> (List Item) elements INSIDE our ordered list.
+  Each step in Gloomy's sneaky plan!
+*/
+#tips ol li {
+    /* 
+      WHITE text on purple background
+      White has maximum contrast against purple = easy to read!
+    */
+    color: white;
+    
+    /* 
+      Margin between list items
+      10px 0 means:
+      - 10px = Space above and below each list item
+      - 0 = No extra space on left and right
+      
+      Creates separation between the steps in the plan.
+    */
+    margin: 10px 0;
+    
+    /* 
+      18px font size for list items
+      Slightly larger than our base 15px for better readability.
+    */
+    font-size: 18px;
+    
+    /* 
+      5px padding inside each list item
+      Adds a little breathing room around the text.
+    */
+    padding: 5px;
+}
+
+/* 
+  ===========================================================================
+  PART 5: SCOREBOARD TABLE - THE GAME RESULTS!
+  ===========================================================================
+  This is where we show player scores - like a sports scoreboard or game leaderboard!
+  Tables are perfect for showing organized data in rows and columns.
+*/
+
+/* 
+  The #scoreboard Selector - Our "Game Results" Section
+  This styles the entire scoreboard area where we show player stats.
+*/
+#scoreboard {
+    /* 
+      LINEAR-GRADIENT background - light blue fading to lighter blue
+      "to bottom" = Colors fade from top to bottom (vertical gradient)
+      #e6f7ff = Very light blue (almost white with blue tint)
+      #b3e0ff = Light blue (sky color)
+      
+      Gradients make backgrounds more interesting than plain colors!
+    */
+    background: linear-gradient(to bottom, #e6f7ff, #b3e0ff);
+    
+    /* 
+      25px padding inside the scoreboard section
+      Gives our table room to breathe inside its container.
+    */
+    padding: 25px;
+    
+    /* 
+      40px margin outside the scoreboard section
+      Separates it from other sections on the page.
+    */
+    margin: 40px;
+    
+    /* 
+      15px border radius - rounded corners
+      Makes the scoreboard section look soft and modern.
+    */
+    border-radius: 15px;
+    
+    /* 
+      Center ALL text inside the scoreboard
+      This affects the heading AND the table content.
+    */
+    text-align: center;
+    
+    /* 
+      Solid blue border around the entire section
+      3px thick, solid line, #3399ff color (bright blue).
+      Adds definition to the scoreboard area.
+    */
+    border: 3px solid #3399ff;
+    
+    /* 
+      Box shadow for depth effect
+      0 8px 16px rgba(0, 0, 0, 0.1) means:
+      - 0 = No horizontal offset
+      - 8px = 8 pixels DOWN offset
+      - 16px = Blur radius (how soft the shadow is)
+      - rgba(0,0,0,0.1) = Black at 10% opacity (very faint)
+      
+      Makes the section look like it's floating slightly above the page!
+    */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+  The #scoreboard h2 Selector - The "Player Scoreboard" Heading
+  Styles the <h2> heading inside our scoreboard section.
+*/
+#scoreboard h2 {
+    /* 
+      DARK BLUE color for the heading
+      Dark blue works well with our light blue gradient background.
+    */
+    color: darkblue;
+    
+    /* 
+      Underline the heading
+      Adds emphasis and clearly labels the section.
+    */
+    text-decoration: underline;
+    
+    /* 
+      Different font for the heading
+      Arial is a clean, simple font that's easy to read.
+      sans-serif = backup if Arial isn't available.
+    */
+    font-family: Arial, sans-serif;
+    
+    /* 
+      28px font size - nice and large
+      Big headings help users understand what each section is about.
+    */
+    font-size: 28px;
+    
+    /* 
+      20px margin below the heading
+      Creates space between the heading and the table below.
+    */
+    margin-bottom: 20px;
+}
+
+/* 
+  The #scoreboard table Selector - The Game Results Table
+  Styles the actual <table> element inside our scoreboard.
+  !important = "Override ANY other rule, no matter what!"
+  Use sparingly - only when absolutely necessary!
+*/
+#scoreboard table {
+    /* 
+      Blue border for the table
+      !important overrides the inline style in the HTML
+      We use this because the HTML has inline styles we want to override.
+    */
+    border: 3px solid blue !important;
+    
+    /* 
+      BORDER-COLLAPSE: SEPARATE = Borders don't merge
+      In tables, adjacent cells share borders by default.
+      "separate" lets us have individual borders for each cell.
+      This allows border-radius to work on table cells!
+    */
+    border-collapse: separate;
+    
+    /* 
+      BORDER-SPACING: 0 = No space between cell borders
+      When border-collapse is "separate", this controls the gap between cells.
+      0 means cells touch each other directly.
+    */
+    border-spacing: 0;
+    
+    /* 
+      Box shadow for the table
+      5px 5px 10px rgba(0, 0, 0, 0.2) means:
+      - 5px right offset
+      - 5px down offset
+      - 10px blur radius
+      - rgba(0,0,0,0.2) = Black at 20% opacity
+      
+      Creates a nice shadow effect for the entire table.
+    */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* 
+      10px border radius for the table
+      Rounds the corners of the entire table.
+      Only works with border-collapse: separate!
+    */
+    border-radius: 10px;
+    
+    /* 
+      OVERFLOW: HIDDEN = Hide anything that goes outside bounds
+      This hides the sharp corners of table cells that stick out
+      beyond our rounded table corners. Makes it look clean!
+    */
+    overflow: hidden;
+    
+    /* 
+      90% width (90% of its parent container)
+      !important overrides the HTML's width="70%"
+      We want it a bit wider than the HTML specified.
+    */
+    width: 90% !important;
+    
+    /* 
+      Auto margins to center the table
+      0 auto means:
+      - 0 = No margin on top and bottom
+      - auto = Automatic left and right margins (centers horizontally!)
+    */
+    margin: 0 auto;
+}
+
+/* 
+  The #scoreboard th Selector - Table Header Cells
+  Styles the <th> elements (table headers - the top row with labels).
+*/
+#scoreboard th {
+    /* 
+      Green gradient background for headers
+      "to bottom" = Vertical gradient
+      #4CAF50 = Medium green
+      #2E8B57 = Sea green (darker green)
+      
+      Creates a nice professional look for the headers.
+    */
+    background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    
+    /* 
+      White text on green background
+      High contrast = maximum readability.
+    */
+    color: white;
+    
+    /* 
+      15px padding inside header cells
+      Makes the header text comfortable to read.
+    */
+    padding: 15px;
+    
+    /* 
+      18px font size for headers
+      Slightly larger than table cell text for emphasis.
+    */
+    font-size: 18px;
+    
+    /* 
+      TEXT-TRANSFORM: UPPERCASE = Convert text to ALL CAPS
+      Makes header labels stand out more.
+      Other options: lowercase, capitalize (first letter of each word)
+    */
+    text-transform: uppercase;
+    
+    /* 
+      LETTER-SPACING: 1px = Space between letters
+      Makes text more readable and gives a professional look.
+      Also called "tracking" in typography.
+    */
+    letter-spacing: 1px;
+}
+
+/* 
+  The #scoreboard td Selector - Table Data Cells
+  Styles the <td> elements (regular table cells with data).
+*/
+#scoreboard td {
+    /* 
+      12px padding inside data cells
+      Gives the player data room to breathe inside each cell.
+    */
+    padding: 12px;
+    
+    /* 
+      Bottom border for each cell
+      1px solid #ddd means:
+      - 1px thick
+      - solid line (not dashed)
+      - #ddd = Light gray (almost white)
+      
+      Creates horizontal lines between rows for better readability.
+    */
+    border-bottom: 1px solid #ddd;
+    
+    /* 
+      Fun font for table data
+      'Comic Sans MS' is playful and friendly - perfect for our game!
+      cursive = Backup font if Comic Sans isn't available.
+    */
+    font-family: 'Comic Sans MS', cursive;
+    
+    /* 
+      16px font size for table data
+      Standard readable size for data.
+    */
+    font-size: 16px;
+}
+
+/* 
+  The #scoreboard tr:nth-child(even) Selector - Even Numbered Rows
+  :nth-child() is a POWERFUL pseudo-class!
+  "even" = Selects every SECOND row (2nd, 4th, 6th, etc.)
+  This is called "zebra striping" - makes tables easier to read!
+*/
+#scoreboard tr:nth-child(even) {
+    /* 
+      Very light blue background for even rows
+      #e6f7ff is almost white with a blue tint.
+      Creates alternating row colors without being too distracting.
+    */
+    background-color: #e6f7ff;
+}
+
+/* 
+  The #scoreboard tr:nth-child(odd) Selector - Odd Numbered Rows
+  "odd" = Selects every FIRST row (1st, 3rd, 5th, etc.)
+  We style odd rows differently than even rows for the zebra effect!
+*/
+#scoreboard tr:nth-child(odd) {
+    /* 
+      Pure white background for odd rows
+      Creates a clean contrast with the light blue even rows.
+    */
+    background-color: #ffffff;
+}
+
+/* 
+  The #scoreboard tr:hover Selector - Row Hover Effect
+  When you mouse over ANY table row, something magical happens!
+*/
+#scoreboard tr:hover {
+    /* 
+      Light yellow background on hover
+      #ffff99 = Pale yellow
+      Makes the row you're looking at stand out clearly!
+    */
+    background-color: #ffff99;
+    
+    /* 
+      TRANSFORM: SCALE(1.01) = Slightly enlarge the row
+      1.01 = 101% of original size (1% bigger)
+      Creates a subtle "pop out" effect when hovering.
+    */
+    transform: scale(1.01);
+    
+    /* 
+      Smooth scaling animation
+      Only animates the transform property (the scaling)
+      Takes 0.3 seconds with "ease" timing function.
+    */
+    transition: transform 0.3s ease;
+}
+
+/* 
+  The #scoreboard caption Selector - Table Caption
+  Styles the <caption> element (the title above the table).
+*/
+#scoreboard caption {
+    /* 
+      20px font size for caption
+      Larger than table text but smaller than main heading.
+    */
+    font-size: 20px;
+    
+    /* 
+      Bold text for emphasis
+      Makes the caption stand out.
+    */
+    font-weight: bold;
+    
+    /* 
+      Blue color for caption
+      #0066cc = Medium blue that matches our theme.
+    */
+    color: #0066cc;
+    
+    /* 
+      10px padding inside the caption
+      Gives the text breathing room.
+    */
+    padding: 10px;
+    
+    /* 
+      CAPTION-SIDE: TOP = Place caption above the table
+      Default is above, but we specify it to be clear.
+      Other option: bottom (below the table).
+    */
+    caption-side: top;
+}
+
+/* 
+  ===========================================================================
+  PART 6: SIGNUP FORM - JOIN THE ADVENTURE!
+  ===========================================================================
+  This is our registration form where players can sign up for the game!
+  Forms collect information from users (like name, email, choices).
+*/
+
+/* 
+  The #signup Selector - Our "Registration Form" Section
+  Styles the entire signup area where players can join the game.
+*/
+#signup {
+    /* 
+      Pink to blue vertical gradient
+      "to bottom" = Colors fade from top to bottom
+      #ffccff = Light pink (almost white with pink tint)
+      #ccffff = Light blue (almost white with blue tint)
+      
+      Creates a dreamy, magical background for our form!
+    */
+    background: linear-gradient(to bottom, #ffccff, #ccffff);
+    
+    /* 
+      30px padding inside the form section
+      Gives our form elements plenty of room.
+    */
+    padding: 30px;
+    
+    /* 
+      40px margin outside the form section
+      Separates it from other page sections.
+    */
+    margin: 40px;
+    
+    /* 
+      20px border radius - rounded corners
+      Makes the form section look soft and friendly.
+    */
+    border-radius: 20px;
+    
+    /* 
+      Dashed purple border
+      4px = Thickness
+      dashed = Broken line (not solid)
+      purple = Magical purple color
+      
+      Dashed borders look fun and playful!
+    */
+    border: 4px dashed purple;
+    
+    /* 
+      Box shadow for depth
+      0 8px 20px rgba(0, 0, 0, 0.15) means:
+      - 0 = No horizontal offset
+      - 8px = 8 pixels down
+      - 20px = Blur radius
+      - rgba(0,0,0,0.15) = Black at 15% opacity
+      
+      Makes the form look like it's floating above the page.
+    */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 
+  The #signup h2 Selector - "Join the Adventure!" Heading
+  Styles the main heading inside our signup form.
+*/
+#signup h2 {
+    /* 
+      DARK MAGENTA color for heading
+      Dark magenta is a rich purple-red color.
+      Stands out nicely on our gradient background.
+    */
+    color: darkmagenta;
+    
+    /* 
+      Center the heading text
+      Perfect for a call-to-action heading!
+    */
+    text-align: center;
+    
+    /* 
+      28px font size - nice and prominent
+      Big enough to grab attention but not overwhelming.
+    */
+    font-size: 28px;
+    
+    /* 
+      Text shadow for depth
+      2px 2px 4px rgba(0, 0, 0, 0.2) = subtle shadow
+      Makes text look slightly raised.
+    */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+    /* 
+      25px margin below the heading
+      Creates space between heading and form fields.
+    */
+    margin-bottom: 25px;
+    
+    /* 
+      Bold, impactful font for heading
+      'Arial Black' is thick and attention-grabbing.
+      Gadget and sans-serif are backup fonts.
+    */
+    font-family: 'Arial Black', Gadget, sans-serif;
+}
+
+/* 
+  The #signup label Selector - Form Field Labels
+  Styles the <label> elements (text next to form fields).
+*/
+#signup label {
+    /* 
+      DISPLAY: INLINE-BLOCK = Special display type
+      Allows us to set width AND keep elements in a line.
+      Different from:
+      - block = Takes full width, starts on new line
+      - inline = No width/height, flows with text
+    */
+    display: inline-block;
+    
+    /* 
+      Fixed width of 200px for all labels
+      Makes form fields line up neatly (all labels same width).
+    */
+    width: 200px;
+    
+    /* 
+      Bold text for labels
+      Makes labels stand out from regular text.
+    */
+    font-weight: bold;
+    
+    /* 
+      Dark blue color for labels
+      Easy to read and matches our color theme.
+    */
+    color: darkblue;
+    
+    /* 
+      10px margin below each label
+      Creates space between label and its input field.
+    */
+    margin-bottom: 10px;
+    
+    /* 
+      18px font size for labels
+      Slightly larger than normal text for clarity.
+    */
+    font-size: 18px;
+    
+    /* 
+      Right-align label text
+      Makes labels line up neatly on the right side.
+      Creates a clean, organized form layout.
+    */
+    text-align: right;
+    
+    /* 
+      15px margin to the right of labels
+      Creates space between label and input field.
+    */
+    margin-right: 15px;
+}
+
+/* 
+  The #signup input[type="text"] and input[type="email"] Selectors
+  Styles text and email input fields specifically.
+  [attribute] selectors target elements with specific attributes!
+*/
+#signup input[type="text"],
+#signup input[type="email"] {
+    /* 
+      300px fixed width for input fields
+      Makes all text/email fields the same width.
+    */
+    width: 300px;
+    
+    /* 
+      12px padding inside input fields
+      Makes text comfortable to type and read.
+    */
+    padding: 12px;
+    
+    /* 
+      Green border around input fields
+      2px solid #4CAF50 = 2px thick solid green border.
+      Green often means "go" or "good" in forms!
+    */
+    border: 2px solid #4CAF50;
+    
+    /* 
+      10px border radius for input fields
+      Rounds the corners - modern and friendly look!
+    */
+    border-radius: 10px;
+    
+    /* 
+      16px font size inside input fields
+      Standard readable size for user input.
+    */
+    font-size: 16px;
+    
+    /* 
+      Very light yellow background
+      #ffffe6 = Almost white with yellow tint.
+      Makes input fields stand out from the background.
+    */
+    background-color: #ffffe6;
+    
+    /* 
+      Smooth transition for ALL properties
+      When fields change (like on focus/hover), changes happen smoothly.
+    */
+    transition: all 0.3s ease;
+}
+
+/* 
+  The #signup select Selector - Dropdown Menu
+  Styles the <select> element (character dropdown).
+*/
+#signup select {
+    /* 
+      300px width - matches text inputs
+      Consistency in form design is important!
+    */
+    width: 300px;
+    
+    /* 
+      12px padding inside dropdown
+      Makes it comfortable to click and read.
+    */
+    padding: 12px;
+    
+    /* 
+      Same green border as text inputs
+      Consistency across all form elements.
+    */
+    border: 2px solid #4CAF50;
+    
+    /* 
+      Same rounded corners as text inputs
+      Consistent design = professional look!
+    */
+    border-radius: 10px;
+    
+    /* 
+      16px font size - matches other inputs
+      Consistency in typography too!
+    */
+    font-size: 16px;
+    
+    /* 
+      Same light yellow background
+      #ffffe6 matches our text input backgrounds.
+    */
+    background-color: #ffffe6;
+    
+    /* 
+      APPEARANCE: NONE = Remove default browser styling
+      Different browsers (Chrome, Firefox, Safari) style dropdowns differently.
+      "none" lets us create our OWN consistent style across all browsers!
+    */
+    appearance: none;
+    
+    /* 
+      Custom dropdown arrow using SVG
+      SVG = Scalable Vector Graphics (like a drawing recipe)
+      This creates a black downward-pointing arrow.
+      url('data:...') = Embed the image directly in CSS (no separate file!)
+    */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    
+    /* 
+      Don't repeat the arrow image
+      We only want one arrow, not a pattern of arrows!
+    */
+    background-repeat: no-repeat;
+    
+    /* 
+      Position the arrow on the right side
+      right 10px = 10px from the right edge
+      center = Vertically centered
+      Perfect placement for a dropdown arrow!
+    */
+    background-position: right 10px center;
+}
+
+/* 
+  The #signup textarea Selector - Message Box
+  Styles the <textarea> element (multi-line text input).
+*/
+#signup textarea {
+    /* 
+      300px width - matches other inputs
+      Consistency in form design!
+    */
+    width: 300px;
+    
+    /* 
+      12px padding inside textarea
+      Makes typing comfortable.
+    */
+    padding: 12px;
+    
+    /* 
+      Same green border as other inputs
+      Design consistency!
+    */
+    border: 2px solid #4CAF50;
+    
+    /* 
+      Same rounded corners
+      Consistent with other form elements.
+    */
+    border-radius: 10px;
+    
+    /* 
+      16px font size - matches other inputs
+      Typography consistency!
+    */
+    font-size: 16px;
+    
+    /* 
+      Same light yellow background
+      #ffffe6 matches all other form inputs.
+    */
+    background-color: #ffffe6;
+    
+    /* 
+      RESIZE: VERTICAL = Only allow vertical resizing
+      Users can make the box taller/shorter but not wider/narrower.
+      Other options: horizontal, both, none (no resizing at all).
+    */
+    resize: vertical;
+    
+    /* 
+      Inherit font from parent
+      Uses the same font as the rest of the page.
+      Good for consistency!
+    */
+    font-family: inherit;
+}
+
+/* 
+  The #signup input:focus, select:focus, textarea:focus Selectors
+  Styles form elements WHEN THEY HAVE FOCUS (are clicked/selected).
+  :focus is a pseudo-class for focused elements!
+*/
+#signup input:focus,
+#signup select:focus,
+#signup textarea:focus {
+    /* 
+      Light green background when focused
+      #e6ffe6 = Very light green
+      Gives visual feedback that the field is active/selected.
+    */
+    background-color: #e6ffe6;
+    
+    /* 
+      Remove default browser outline
+      Different browsers add colored outlines to focused elements.
+      We remove it to use our OWN focus style.
+    */
+    outline: none;
+    
+    /* 
+      Change border to ORANGE when focused
+      #ff9900 = Bright orange
+      Orange attracts attention - shows which field is active!
+    */
+    border-color: #ff9900;
+    
+    /* 
+      Glowing orange shadow when focused
+      0 0 8px #ff9900 means:
+      - 0 = No horizontal offset
+      - 0 = No vertical offset
+      - 8px = Blur radius (creates glow effect)
+      - #ff9900 = Orange color
+      
+      Makes the field look like it's glowing!
+    */
+    box-shadow: 0 0 8px #ff9900;
+    
+    /* 
+      Slightly enlarge the field when focused
+      scale(1.02) = 102% of original size (2% bigger)
+      Subtle but effective focus indicator!
+    */
+    transform: scale(1.02);
+}
+
+/* 
+  The #signup button Selector - Form Buttons
+  Styles ALL <button> elements inside our signup form.
+*/
+#signup button {
+    /* 
+      Green gradient for buttons
+      "to bottom" = Vertical gradient
+      #4CAF50 = Medium green (top)
+      #2E8B57 = Sea green/darker green (bottom)
+      
+      Creates a professional, clickable button look.
+    */
+    background: linear-gradient(to bottom, #4CAF50, #2E8B57);
+    
+    /* 
+      White text on green buttons
+      High contrast = easy to read!
+    */
+    color: white;
+    
+    /* 
+      Button padding
+      14px 30px means:
+      - 14px = Top and bottom padding
+      - 30px = Left and right padding
+      
+      Makes buttons a comfortable size for clicking.
+    */
+    padding: 14px 30px;
+    
+    /* 
+      No border (we're using background instead)
+      Sometimes buttons have borders, but ours use gradient backgrounds.
+    */
+    border: none;
+    
+    /* 
+      8px border radius - slightly rounded corners
+      Modern, friendly button shape.
+    */
+    border-radius: 8px;
+    
+    /* 
+      18px font size - clear and readable
+      Button text should be easy to read!
+    */
+    font-size: 18px;
+    
+    /* 
+      CURSOR: POINTER = Change mouse to hand icon
+      When you hover over the button, cursor becomes a pointing hand.
+      Universal sign for "clickable"!
+    */
+    cursor: pointer;
+    
+    /* 
+      10px margin around buttons
+      Space between buttons and other elements.
+    */
+    margin: 10px;
+    
+    /* 
+      Bold text for buttons
+      Makes button text stand out.
+    */
+    font-weight: bold;
+    
+    /* 
+      Smooth transitions for all properties
+      Makes hover/active effects smooth, not jumpy.
+    */
+    transition: all 0.3s ease;
+    
+    /* 
+      Display as inline-block
+      Allows buttons to sit side-by-side but have width/height.
+    */
+    display: inline-block;
+    
+    /* 
+      Minimum width of 150px for all buttons
+      Ensures buttons are a consistent, comfortable size.
+      Prevents "Join Game" and "Clear" from being different widths.
+    */
+    min-width: 150px;
+}
+
+/* 
+  The #signup button[type="submit"]:hover Selector
+  Hover effect for the SUBMIT button specifically.
+  [type="submit"] targets button with type="submit" attribute.
+*/
+#signup button[type="submit"]:hover {
+    /* 
+      Change to orange gradient on hover
+      "to bottom" = Vertical gradient
+      #ff9900 = Bright orange (top)
+      #cc6600 = Darker orange/brown (bottom)
+      
+      Orange = action, excitement - perfect for submit!
+    */
+    background: linear-gradient(to bottom, #ff9900, #cc6600);
+    
+    /* 
+      Move button UP 3 pixels on hover
+      translateY(-3px) = Move 3 pixels up (negative = up)
+      Creates a "lifting" effect.
+    */
+    transform: translateY(-3px);
+    
+    /* 
+      Add stronger shadow on hover
+      0 7px 14px rgba(0, 0, 0, 0.2) means:
+      - 0 = No horizontal offset
+      - 7px = 7 pixels down
+      - 14px = Blur radius
+      - rgba(0,0,0,0.2) = Black at 20% opacity
+      
+      Makes the lifted effect more dramatic!
+    */
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  The #signup button[type="reset"]:hover Selector
+  Hover effect for the RESET/CLEAR button specifically.
+  [type="reset"] targets button with type="reset" attribute.
+*/
+#signup button[type="reset"]:hover {
+    /* 
+      Change to red gradient on hover
+      "to bottom" = Vertical gradient
+      #ff3333 = Bright red (top)
+      #cc0000 = Dark red (bottom)
+      
+      Red = warning, danger - appropriate for "clear form"!
+    */
+    background: linear-gradient(to bottom, #ff3333, #cc0000);
+    
+    /* 
+      Same lift effect as submit button
+      Consistency in interaction design!
+    */
+    transform: translateY(-3px);
+    
+    /* 
+      Same shadow as submit button
+      Consistent visual feedback for all buttons!
+    */
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  The #signup button:active Selector
+  Active state for ALL buttons (when CLICKED/PRESSED).
+  :active is a pseudo-class for "being clicked right now"!
+*/
+#signup button:active {
+    /* 
+      Move button DOWN 1 pixel when clicked
+      translateY(1px) = Move 1 pixel down (positive = down)
+      Opposite of hover effect - makes it feel "pressed in".
+    */
+    transform: translateY(1px);
+    
+    /* 
+      Smaller shadow when pressed
+      0 3px 6px rgba(0, 0, 0, 0.2) = less dramatic shadow
+      Makes button look "flatter" when pressed.
+    */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 
+  ===========================================================================
+  PART 7: HTML FUN LESSONS - LEARNING NEW HTML TAGS!
+  ===========================================================================
+  This section teaches about <figure>, <canvas>, and <iframe> tags.
+  Each has special styling to make the lessons fun and clear!
+*/
+
+/* 
+  The #html-fun-lessons Selector - Our "Learning Zone" Section
+  Styles the entire HTML lessons section.
+*/
+#html-fun-lessons {
+    /* 
+      LEMON CHIFFON background color
+      #fffacd = A soft, light yellow (like lemon dessert!)
+      Perfect for a learning section - bright and cheerful!
+    */
+    background-color: #fffacd;
+    
+    /* 
+      30px padding inside the lessons section
+      Gives our learning content room to breathe.
+    */
+    padding: 30px;
+    
+    /* 
+      40px margin outside the section
+      Separates it from other content.
+    */
+    margin: 40px;
+    
+    /* 
+      15px border radius - rounded corners
+      Soft, friendly look for our learning area.
+    */
+    border-radius: 15px;
+    
+    /* 
+      Thick red left border
+      8px solid #ff6b6b means:
+      - 8px thick (very thick!)
+      - solid line
+      - #ff6b6b = Coral red color
+      
+      Creates a visual "accent" on the left side.
+      Like highlighting important notes in a textbook!
+    */
+    border-left: 8px solid #ff6b6b;
+}
+
+/* 
+  The #html-fun-lessons h2 Selector - Main Lessons Heading
+  Styles the <h2> heading in our lessons section.
+*/
+#html-fun-lessons h2 {
+    /* 
+      Blue color for heading
+      #0066cc = Medium blue
+      Blue often represents learning and knowledge!
+    */
+    color: #0066cc;
+    
+    /* 
+      Center the heading
+      Good for section titles.
+    */
+    text-align: center;
+    
+    /* 
+      30px font size - prominent
+      Clearly marks the start of our lessons.
+    */
+    font-size: 30px;
+    
+    /* 
+      20px margin below heading
+      Space before the lesson content begins.
+    */
+    margin-bottom: 20px;
+    
+    /* 
+      Double border below heading
+      3px double #0066cc means:
+      - 3px thick (total for both lines)
+      - double = Two parallel lines
+      - #0066cc = Same blue as text
+      
+      Creates a fancy underline effect!
+    */
+    border-bottom: 3px double #0066cc;
+    
+    /* 
+      15px padding below heading (above the border)
+      Space between text and the double border.
+    */
+    padding-bottom: 15px;
+}
+
+/* 
+  The #html-fun-lessons h3 Selector - Lesson Sub-headings
+  Styles the <h3> headings (like "Character Gallery", "Canvas Playground").
+*/
+#html-fun-lessons h3 {
+    /* 
+      Green color for sub-headings
+      #009933 = Bright green
+      Green often means "go ahead, learn this!" 
+    */
+    color: #009933;
+    
+    /* 
+      Margin around sub-headings
+      25px 0 15px 0 means:
+      - 25px = Space above (separates from previous content)
+      - 0 = No extra space on right
+      - 15px = Space below (before the lesson content)
+      - 0 = No extra space on left
+    */
+    margin: 25px 0 15px 0;
+    
+    /* 
+      15px padding on LEFT side only
+      Creates space for our left border to "breathe".
+    */
+    padding-left: 15px;
+    
+    /* 
+      Green left border for sub-headings
+      4px solid #009933 means:
+      - 4px thick
+      - solid line
+      - #009933 = Same green as text
+      
+      Creates a vertical accent line next to each sub-heading.
+      Visually connects sub-headings to the main section's left border!
+    */
+    border-left: 4px solid #009933;
+}
+
+/* 
+  The #html-fun-lessons figure Selector - Character Gallery Images
+  Styles the <figure> elements that contain character images.
+*/
+#html-fun-lessons figure {
+    /* 
+      DISPLAY: INLINE-BLOCK = Side-by-side display
+      Makes figures sit next to each other horizontally.
+      Unlike display: block (which would stack vertically).
+    */
+    display: inline-block;
+    
+    /* 
+      20px margin around each figure
+      Space between character images.
+    */
+    margin: 20px;
+    
+    /* 
+      15px padding inside each figure
+      Space between image and figure border.
+    */
+    padding: 15px;
+    
+    /* 
+      White background behind images
+      Makes images stand out from the yellow section background.
+    */
+    background-color: white;
+    
+    /* 
+      10px border radius - rounded corners
+      Softens the look of the image containers.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Subtle shadow effect
+      0 4px 8px rgba(0, 0, 0, 0.1) = very light shadow
+      Gives depth to the image containers.
+    */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* 
+      Center contents inside figure
+      Centers both image AND caption.
+    */
+    text-align: center;
+    
+    /* 
+      Smooth transform transitions
+      Only animates transform property (for hover effect).
+    */
+    transition: transform 0.3s ease;
+}
+
+/* 
+  The #html-fun-lessons figure:hover Selector - Hover Effect
+  When hovering over character images in the gallery.
+*/
+#html-fun-lessons figure:hover {
+    /* 
+      Scale up slightly on hover
+      scale(1.05) = 105% of original size (5% bigger)
+      Makes the image "pop out" when you look at it!
+    */
+    transform: scale(1.05);
+    
+    /* 
+      Stronger shadow on hover
+      0 6px 12px rgba(0, 0, 0, 0.15) = darker and more spread out
+      Enhances the "pop out" effect!
+    */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 
+  The #html-fun-lessons canvas Selector - Drawing Canvas
+  Styles the <canvas> element (blank drawing area for JavaScript).
+*/
+#html-fun-lessons canvas {
+    /* 
+      Dark border around canvas
+      3px solid #333 = 3px thick solid dark gray border.
+      Clearly defines the drawing area.
+    */
+    border: 3px solid #333;
+    
+    /* 
+      Dark blue gradient background
+      linear-gradient(45deg, #000033, #000066) means:
+      - 45deg = 45 degree angle (diagonal gradient)
+      - #000033 = Very dark blue (almost black)
+      - #000066 = Dark blue
+      
+      Looks like a night sky - perfect for a blank canvas!
+    */
+    background: linear-gradient(45deg, #000033, #000066);
+    
+    /* 
+      DISPLAY: BLOCK = Takes full available width
+      Unlike inline-block, block elements start on new lines.
+      Also allows margin: auto to work for centering!
+    */
+    display: block;
+    
+    /* 
+      Auto margins to center horizontally
+      20px auto means:
+      - 20px = Top and bottom margin (space above/below)
+      - auto = Automatic left/right margins (centers element!)
+    */
+    margin: 20px auto;
+    
+    /* 
+      10px border radius - rounded corners
+      Softens the canvas edges.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Shadow effect for canvas
+      0 6px 12px rgba(0, 0, 0, 0.3) = medium shadow
+      Makes canvas look like it's floating.
+    */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+  The #html-fun-lessons iframe Selector - Embedded Content Windows
+  Styles <iframe> elements (embedded videos, maps, websites).
+*/
+#html-fun-lessons iframe {
+    /* 
+      Green border around iframes
+      3px solid #4CAF50 = 3px thick solid green border.
+      Green = "go" = these are interactive windows to other content!
+    */
+    border: 3px solid #4CAF50;
+    
+    /* 
+      10px border radius - rounded corners
+      Modern, friendly look for embedded content.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Auto margins to center iframes
+      20px auto means:
+      - 20px = Top and bottom margin
+      - auto = Center horizontally
+    */
+    margin: 20px auto;
+    
+    /* 
+      Shadow effect for iframes
+      0 4px 8px rgba(0, 0, 0, 0.2) = light shadow
+      Gives depth to the embedded windows.
+    */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* 
+      DISPLAY: BLOCK = Centers with margin: auto
+      Block display allows centering with auto margins.
+    */
+    display: block;
+    
+    /* 
+      White background while loading
+      Shows something clean while external content loads.
+    */
+    background-color: white;
+}
+
+/* 
+  The #html-fun-lessons pre Selector - Code Examples
+  Styles <pre> elements (preformatted text - preserves spaces/line breaks).
+  Used for showing HTML/CSS code examples!
+*/
+#html-fun-lessons pre {
+    /* 
+      Dark background for code
+      #2d2d2d = Very dark gray (almost black)
+      Dark backgrounds are standard for code displays.
+    */
+    background-color: #2d2d2d;
+    
+    /* 
+      Light text on dark background
+      #f8f8f2 = Off-white with yellow tint
+      High contrast = easy to read code!
+    */
+    color: #f8f8f2;
+    
+    /* 
+      15px padding inside code blocks
+      Gives code room to breathe.
+    */
+    padding: 15px;
+    
+    /* 
+      8px border radius - slightly rounded
+      Softens the code block edges.
+    */
+    border-radius: 8px;
+    
+    /* 
+      OVERFLOW-X: AUTO = Horizontal scroll if needed
+      If code is too wide for the container, adds scrollbar.
+      Better than having code overflow off the screen!
+    */
+    overflow-x: auto;
+    
+    /* 
+      Monospace font for code
+      'Courier New' = Classic code/monospace font
+      monospace = Backup (any monospace font)
+      
+      Monospace fonts have equal character width - perfect for code alignment!
+    */
+    font-family: 'Courier New', monospace;
+    
+    /* 
+      Margin above and below code blocks
+      15px 0 means:
+      - 15px = Top and bottom margin
+      - 0 = No extra left/right margin
+    */
+    margin: 15px 0;
+    
+    /* 
+      Orange left border for code blocks
+      4px solid #ff9900 = 4px thick solid orange border.
+      Orange often represents code/technical content.
+    */
+    border-left: 4px solid #ff9900;
+}
+
+/* 
+  The #html-fun-lessons ul and #html-fun-lessons ol Selectors
+  Styles lists in the lessons section.
+*/
+#html-fun-lessons ul, 
+#html-fun-lessons ol {
+    /* 
+      Semi-transparent white background for lists
+      rgba(255, 255, 255, 0.7) means:
+      - 255,255,255 = White
+      - 0.7 = 70% opacity (30% see-through)
+      
+      Lets some yellow show through - subtle effect!
+    */
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    /* 
+      Padding inside lists
+      20px 40px means:
+      - 20px = Top and bottom padding
+      - 40px = Left and right padding
+    */
+    padding: 20px 40px;
+    
+    /* 
+      10px border radius - rounded corners
+      Softens list containers.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Margin above and below lists
+      15px 0 means:
+      - 15px = Top and bottom margin
+      - 0 = No extra left/right margin
+    */
+    margin: 15px 0;
+}
+
+/* 
+  ===========================================================================
+  PART 8: MEDIA ELEMENTS - PICTURES, SOUNDS, AND VIDEOS!
+  ===========================================================================
+  This section styles images, audio players, and video players.
+  Making media elements look good is important for a fun website!
+*/
+
+/* 
+  The img Selector - ALL Images on Our Site
+  This is a UNIVERSAL image rule - applies to EVERY <img> tag!
+*/
+img {
+    /* 
+      MAX-WIDTH: 100% = Never wider than container
+      Prevents images from overflowing their containers.
+      Very important for responsive design!
+    */
+    max-width: 100%;
+    
+    /* 
+      HEIGHT: AUTO = Maintain aspect ratio
+      When width changes, height adjusts automatically.
+      Prevents images from looking squished or stretched!
+    */
+    height: auto;
+    
+    /* 
+      Dark border around all images
+      3px solid #333 = 3px thick solid dark gray.
+      Frames images nicely.
+    */
+    border: 3px solid #333;
+    
+    /* 
+      10px border radius - rounded corners
+      Makes images look friendlier.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Smooth transitions for all properties
+      If images change (like on hover), changes happen smoothly.
+    */
+    transition: all 0.3s ease;
+}
+
+/* 
+  Special Selector for Broken Images
+  This is a SUPER SPECIFIC selector using attribute matching!
+  It targets images whose src attribute:
+  1. Contains ".jp" (img[src*=".jp"])
+  2. But DOES NOT contain ".jpg" (:not([src*=".jpg"]))
+  3. And DOES NOT contain ".jpeg" (:not([src*=".jpeg"]))
+  
+  This catches our broken image: src="./gloomy.jp" (missing the "g")
+*/
+img[src*=".jp"]:not([src*=".jpg"]):not([src*=".jpeg"]) {
+    /* 
+      Red dashed border for broken images
+      3px dashed red = 3px thick DASHED red border.
+      Dashed = "something is wrong/broken here"
+      Red = "warning/error"
+    */
+    border: 3px dashed red;
+    
+    /* 
+      20px padding around broken images
+      Extra space to make the warning more noticeable.
+    */
+    padding: 20px;
+    
+    /* 
+      Light red background for broken images
+      #ffe6e6 = Very light pink/red.
+      Makes broken image area clearly visible.
+    */
+    background-color: #ffe6e6;
+    
+    /* 
+      POSITION: RELATIVE = Positioning context
+      Needed for our ::after pseudo-element positioning.
+      Allows us to position the warning text RELATIVE to the image.
+    */
+    position: relative;
+}
+
+/* 
+  The ::after Pseudo-element for Broken Images
+  ::after adds CONTENT AFTER an element (like adding text after an image).
+  This only applies to our broken image selector above!
+*/
+img[src*=".jp"]:not([src*=".jpg"]):not([src*=".jpeg"])::after {
+    /* 
+      CONTENT: "Image not found!" = The text to add
+      This text will appear AFTER our broken image.
+      Content property is REQUIRED for ::before and ::after!
+    */
+    content: "Image not found!";
+    
+    /* 
+      DISPLAY: BLOCK = Treat as block element
+      Starts on new line (below the image).
+    */
+    display: block;
+    
+    /* 
+      Red text for warning message
+      Matches the red dashed border.
+    */
+    color: red;
+    
+    /* 
+      Bold text for emphasis
+      Makes warning stand out.
+    */
+    font-weight: bold;
+    
+    /* 
+      Center the warning text
+      Looks neat below the image.
+    */
+    text-align: center;
+    
+    /* 
+      10px margin above the warning text
+      Space between image and warning message.
+    */
+    margin-top: 10px;
+}
+
+/* 
+  The audio Selector - Music/Sound Players
+  Styles ALL <audio> elements on our site.
+*/
+audio {
+    /* 
+      DISPLAY: BLOCK = Takes full width, allows centering
+      Audio players are block-level by default anyway.
+    */
+    display: block;
+    
+    /* 
+      Auto margins to center horizontally
+      20px auto means:
+      - 20px = Top and bottom margin
+      - auto = Center horizontally
+    */
+    margin: 20px auto;
+    
+    /* 
+      80% width (of parent container)
+      Makes audio player responsive - adjusts to container size.
+    */
+    width: 80%;
+    
+    /* 
+      Maximum width of 500px
+      Prevents audio player from getting TOO wide on large screens.
+    */
+    max-width: 500px;
+    
+    /* 
+      25px border radius - very rounded corners
+      Creates a pill-shaped audio player!
+    */
+    border-radius: 25px;
+    
+    /* 
+      Shadow effect for audio player
+      0 4px 8px rgba(0, 0, 0, 0.3) = medium shadow
+      Gives depth to the player.
+    */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+  Special Selector for Audio Player Controls (WebKit Browsers)
+  ::-webkit-media-controls-panel targets the control panel INSIDE audio/video.
+  WebKit = Browser engine used by Chrome, Safari, Edge, etc.
+  This lets us style the INTERNAL parts of media players!
+*/
+audio::-webkit-media-controls-panel {
+    /* 
+      Green background for audio controls
+      #4CAF50 = Same green we use elsewhere.
+      Creates consistent color theme!
+    */
+    background-color: #4CAF50;
+}
+
+/* 
+  The video Selector - Video Players
+  Styles ALL <video> elements on our site.
+*/
+video {
+    /* 
+      DISPLAY: BLOCK = Allows centering with margin: auto
+    */
+    display: block;
+    
+    /* 
+      Auto margins to center horizontally
+      20px auto means:
+      - 20px = Top and bottom margin  
+      - auto = Center horizontally
+    */
+    margin: 20px auto;
+    
+    /* 
+      80% width (responsive)
+      Adjusts to container size.
+    */
+    width: 80%;
+    
+    /* 
+      Maximum width of 640px
+      Standard video width, prevents getting too large.
+    */
+    max-width: 640px;
+    
+    /* 
+      10px border radius - slightly rounded corners
+      Softens video player edges.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Shadow effect for video player
+      0 6px 12px rgba(0, 0, 0, 0.3) = strong shadow
+      Gives video player depth.
+    */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    
+    /* 
+      Black background while video loads
+      Shows clean black area before video plays.
+    */
+    background-color: black;
+}
+
+/* 
+  ===========================================================================
+  PART 9: ADDITIONAL SECTIONS - ARTICLE, ASIDE, AND FOOTER
+  ===========================================================================
+  These are supplementary sections that add extra information and complete
+  the page structure. Every good website needs these finishing touches!
+*/
+
+/* 
+  The article Selector - Developer Notes Section
+  Styles the <article> element (self-contained content).
+  In our site, this is the "Developer Notes" section.
+*/
+article {
+    /* 
+      Very light blue background
+      #e8f4f8 = Almost white with blue tint.
+      Subtle, professional look for notes.
+    */
+    background-color: #e8f4f8;
+    
+    /* 
+      25px padding inside article
+      Gives notes content room to breathe.
+    */
+    padding: 25px;
+    
+    /* 
+      40px margin outside article
+      Separates from other sections.
+    */
+    margin: 40px;
+    
+    /* 
+      10px border radius - slightly rounded
+      Softens the article container.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Blue left border for article
+      6px solid #0066cc = 6px thick solid blue border.
+      Creates visual connection to other blue elements.
+    */
+    border-left: 6px solid #0066cc;
+}
+
+/* 
+  The article h2 Selector - Developer Notes Heading
+  Styles the <h2> heading inside our article.
+*/
+article h2 {
+    /* 
+      Blue color for heading
+      #0066cc = Same blue as left border.
+      Color consistency!
+    */
+    color: #0066cc;
+    
+    /* 
+      15px margin below heading
+      Space before the notes text begins.
+    */
+    margin-bottom: 15px;
+}
+
+/* 
+  The article span Selector - Special Text Inside Article
+  Styles <span> elements inside our article.
+  In our HTML, this is around "Code Wonderland".
+*/
+article span {
+    /* 
+      Light yellow background for highlighted text
+      #ffff99 = Pale yellow.
+      Makes specific words stand out (like a highlighter pen!).
+    */
+    background-color: #ffff99;
+    
+    /* 
+      Small padding around highlighted text
+      2px 6px means:
+      - 2px = Top and bottom padding
+      - 6px = Left and right padding
+      
+      Just enough to make the highlight visible.
+    */
+    padding: 2px 6px;
+    
+    /* 
+      4px border radius - slightly rounded
+      Softens the highlight edges.
+    */
+    border-radius: 4px;
+    
+    /* 
+      Bold text for emphasis
+      Makes highlighted text even more prominent.
+    */
+    font-weight: bold;
+    
+    /* 
+      Orange-brown text color
+      #cc6600 = Dark orange/brown.
+      Good contrast against yellow background.
+    */
+    color: #cc6600;
+}
+
+/* 
+  The aside Selector - Quick Tip Sidebar
+  Styles the <aside> element (related but separate content).
+  In our site, this is the "Quick Tip" sidebar.
+*/
+aside {
+    /* 
+      Lavender blush background
+      #fff0f5 = Very light pink with purple tint.
+      Feminine, gentle color for tips.
+    */
+    background-color: #fff0f5;
+    
+    /* 
+      20px padding inside aside
+      Gives tip content room.
+    */
+    padding: 20px;
+    
+    /* 
+      40px margin outside aside
+      Separates from main content.
+    */
+    margin: 40px;
+    
+    /* 
+      10px border radius - slightly rounded
+      Softens the tip box.
+    */
+    border-radius: 10px;
+    
+    /* 
+      Pink dotted border
+      2px dotted #ff66b2 means:
+      - 2px thick
+      - dotted = Series of dots (not solid line)
+      - #ff66b2 = Bright pink
+      
+      Dotted = informal/friendly, Pink = feminine/fun.
+    */
+    border: 2px dotted #ff66b2;
+    
+    /* 
+      Italic text for aside
+      Italics often indicate side notes or quotes.
+      Perfect for tips!
+    */
+    font-style: italic;
+}
+
+/* 
+  The aside h3 Selector - Quick Tip Heading
+  Styles the <h3> heading inside our aside.
+*/
+aside h3 {
+    /* 
+      Bright pink color for tip heading
+      #ff66b2 = Same pink as dotted border.
+      Color consistency!
+    */
+    color: #ff66b2;
+    
+    /* 
+      10px margin below heading
+      Space before tip text begins.
+    */
+    margin-bottom: 10px;
+}
+
+/* 
+  The footer Selector - Website Footer
+  Styles the <footer> element (bottom of the page).
+  Footers usually contain copyright, contact info, links, etc.
+*/
+footer {
+    /* 
+      Dark gray gradient background
+      linear-gradient(to right, #333333, #666666) means:
+      - to right = Horizontal gradient (left to right)
+      - #333333 = Very dark gray (left)
+      - #666666 = Medium gray (right)
+      
+      Dark footer = visual "base" for the page.
+    */
+    background: linear-gradient(to right, #333333, #666666);
+    
+    /* 
+      White text on dark background
+      High contrast = easy to read footer text.
+    */
+    color: white;
+    
+    /* 
+      30px padding inside footer
+      Gives footer content plenty of room.
+    */
+    padding: 30px;
+    
+    /* 
+      Center all footer content
+      Standard for footers.
+    */
+    text-align: center;
+    
+    /* 
+      40px margin above footer
+      Space between last content and footer.
+    */
+    margin-top: 40px;
+    
+    /* 
+      Green top border for footer
+      5px solid #4CAF50 = 5px thick solid green.
+      Adds a colorful accent at page bottom.
+    */
+    border-top: 5px solid #4CAF50;
+}
+
+/* 
+  ===========================================================================
+  PART 10: SPECIAL EFFECTS & ANIMATIONS - THE MAGIC TOUCH!
+  ===========================================================================
+  These are bonus styles that add extra fun and interactivity.
+  Animations make websites feel alive and magical!
+*/
+
+/* 
+  The .character-card Class - Challenge Activity Cards
+  This is a CLASS selector (starts with .) for reusable styles.
+  Classes can be used MULTIPLE times on a page (unlike IDs).
+*/
+.character-card {
+    /* 
+      Gold border for character cards
+      3px solid gold = 3px thick solid gold border.
+      Gold = premium/special - perfect for character cards!
+    */
+    border: 3px solid gold;
+    
+    /* 
+      Diagonal pink-to-green gradient
+      linear-gradient(45deg, #ffcccc, #ccffcc) means:
+      - 45deg = Diagonal gradient (45 degree angle)
+      - #ffcccc = Very light pink (top-left)
+      - #ccffcc = Very light green (bottom-right)
+      
+      Creates a magical, ethereal background!
+    */
+    background: linear-gradient(45deg, #ffcccc, #ccffcc);
+    
+    /* 
+      20px padding inside cards
+      Gives card content room.
+    */
+    padding: 20px;
+    
+    /* 
+      15px margin around cards
+      Space between multiple cards.
+    */
+    margin: 15px;
+    
+    /* 
+      15px border radius - rounded corners
+      Soft, friendly card shape.
+    */
+    border-radius: 15px;
+    
+    /* 
+      250px fixed width for cards
+      Makes all cards same size.
+    */
+    width: 250px;
+    
+    /* 
+      DISPLAY: INLINE-BLOCK = Side-by-side display
+      Allows cards to sit next to each other horizontally.
+    */
+    display: inline-block;
+    
+    /* 
+      Center content inside cards
+      Centers both image and text.
+    */
+    text-align: center;
+    
+    /* 
+      Shadow effect for cards
+      0 6px 12px rgba(0, 0, 0, 0.2) = medium shadow.
+      Gives cards depth.
+    */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    
+    /* 
+      Smooth transitions for ALL properties
+      Will animate ALL changes (like hover effects).
+    */
+    transition: all 0.5s ease;
+}
+
+/* 
+  The .character-card:hover Selector - Card Hover Magic
+  When hovering over character cards.
+*/
+.character-card:hover {
+    /* 
+      ROTATE and SCALE on hover
+      rotate(5deg) = Tilt 5 degrees clockwise
+      scale(1.05) = Enlarge to 105% size
+      
+      Creates a playful "pick up and examine" effect!
+    */
+    transform: rotate(5deg) scale(1.05);
+    
+    /* 
+      Stronger shadow on hover
+      0 10px 20px rgba(0, 0, 0, 0.3) = larger, darker shadow.
+      Enhances the "lifted" effect.
+    */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 
+  The .join-button Class - Animated Rainbow Button
+  Another CLASS selector for a special animated button.
+*/
+.join-button {
+    /* 
+      RAINBOW gradient background!
+      linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)
+      - 90deg = Horizontal gradient (left to right)
+      - All rainbow colors in ROYGBIV order!
+      
+      Creates a beautiful rainbow background.
+    */
+    background: linear-gradient(90deg, 
+        red, orange, yellow, green, blue, indigo, violet);
+    
+    /* 
+      BACKGROUND-SIZE: 400% 400% = Enlarge background
+      Makes gradient 4x bigger than element.
+      Needed for animation to work smoothly!
+    */
+    background-size: 400% 400%;
+    
+    /* 
+      ANIMATION property - The magic happens here!
+      rainbow = Name of animation (defined with @keyframes below)
+      3s = 3 seconds per cycle
+      ease = Smooth acceleration/deceleration
+      infinite = Repeat forever!
+      
+      This makes the rainbow colors slide across the button!
+    */
+    animation: rainbow 3s ease infinite;
+    
+    /* 
+      White text on rainbow background
+      White contrasts with ALL rainbow colors.
+    */
+    color: white;
+    
+    /* 
+      Button padding
+      15px 30px means:
+      - 15px = Top and bottom padding
+      - 30px = Left and right padding
+    */
+    padding: 15px 30px;
+    
+    /* 
+      20px font size - nice and readable
+    */
+    font-size: 20px;
+    
+    /* 
+      25px border radius - very rounded
+      Creates a pill-shaped button.
+    */
+    border-radius: 25px;
+    
+    /* 
+      No border (using background instead)
+    */
+    border: none;
+    
+    /* 
+      Pointer cursor on hover
+      Universal "clickable" indicator.
+    */
+    cursor: pointer;
+    
+    /* 
+      Bold text for emphasis
+    */
+    font-weight: bold;
+    
+    /* 
+      DISPLAY: BLOCK = Allows centering with margin: auto
+    */
+    display: block;
+    
+    /* 
+      Auto margins to center button
+      20px auto means:
+      - 20px = Top and bottom margin
+      - auto = Center horizontally
+    */
+    margin: 20px auto;
+    
+    /* 
+      Smooth transitions for all properties
+      For hover effects.
+    */
+    transition: all 0.3s ease;
+}
+
+/* 
+  The .join-button:hover Selector - Rainbow Button Hover
+  When hovering over the rainbow button.
+*/
+.join-button:hover {
+    /* 
+      Scale up on hover
+      scale(1.1) = 110% of original size (10% bigger)
+      Makes button grow when you point at it!
+    */
+    transform: scale(1.1);
+    
+    /* 
+      White glow shadow on hover
+      0 0 20px rgba(255, 255, 255, 0.8) means:
+      - 0 = No offset (centered glow)
+      - 0 = No offset (centered glow)
+      - 20px = Blur radius
+      - rgba(255,255,255,0.8) = White at 80% opacity
+      
+      Creates a magical glowing effect!
+    */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* 
+  @keyframes rainbow - DEFINING THE ANIMATION
+  @keyframes creates a custom animation that we can use with animation: property.
+  Think of it like defining the steps of a dance routine!
+*/
+@keyframes rainbow {
+    /* 
+      0% = Start of animation
+      background-position: 0% 50% means:
+      - 0% = Horizontal position (all the way left)
+      - 50% = Vertical position (centered)
+      
+      Shows rainbow starting position.
+    */
+    0% {
+        background-position: 0% 50%;
+    }
+    
+    /* 
+      50% = Middle of animation
+      background-position: 100% 50% means:
+      - 100% = Horizontal position (all the way right)
+      - 50% = Vertical position (centered)
+      
+      Rainbow has slid all the way to the right.
+    */
+    50% {
+        background-position: 100% 50%;
+    }
+    
+    /* 
+      100% = End of animation (back to start)
+      background-position: 0% 50% = Back to left position.
+      
+      Creates seamless loop back to beginning!
+    */
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 
+  ===========================================================================
+  PART 11: RESPONSIVE DESIGN - FOR PHONES AND TABLETS!
+  ===========================================================================
+  Responsive design means our website looks good on ALL devices:
+  - Desktop computers (big screens)
+  - Tablets (medium screens)
+  - Phones (small screens)
+  
+  We use @media queries to apply different styles based on screen size.
+*/
+
+/* 
+  @media (max-width: 768px) - For TABLETS and smaller
+  Applies these styles ONLY when screen is 768px wide or LESS.
+  768px is a common breakpoint for tablets.
+*/
+@media (max-width: 768px) {
+    /* 
+      Adjust navigation for smaller screens
+    */
+    .main-nav ul {
+        /* 
+          FLEX-DIRECTION: COLUMN = Stack links vertically
+          On small screens, horizontal nav doesn't fit well.
+          Vertical stacking saves space!
+        */
+        flex-direction: column;
+        
+        /* 
+          Smaller gap between stacked links
+          10px instead of 30px (fits better vertically).
+        */
+        gap: 10px;
+    }
+    
+    /* 
+      Adjust all main sections for smaller screens
+      Selects multiple sections at once (comma-separated list).
+    */
+    #home, #tips, #scoreboard, #signup, #html-fun-lessons {
+        /* 
+          Smaller margins on small screens
+          20px instead of 40px (saves precious screen space!).
+        */
+        margin: 20px;
+        
+        /* 
+          Smaller padding on small screens
+          20px instead of 25-30px (more content fits on screen).
+        */
+        padding: 20px;
+    }
+    
+    /* 
+      Adjust form layout for small screens
+    */
+    #signup label {
+        /* 
+          DISPLAY: BLOCK = Labels above inputs (not beside)
+          On small screens, side-by-side doesn't fit.
+          Stacking (label above input) works better!
+        */
+        display: block;
+        
+        /* 
+          Full width for labels
+          100% instead of 200px fixed width.
+        */
+        width: 100%;
+        
+        /* 
+          Left-align text (not right-aligned)
+          Looks more natural when labels are above inputs.
+        */
+        text-align: left;
+        
+        /* 
+          Smaller margin below labels
+          5px instead of 10px (saves vertical space).
+        */
+        margin-bottom: 5px;
+    }
+    
+    /* 
+      Make form inputs full width on small screens
+      Selects multiple input types at once.
+    */
+    #signup input[type="text"],
+    #signup input[type="email"],
+    #signup select,
+    #signup textarea {
+        /* 
+          Full width (100%) instead of fixed 300px
+          Uses all available horizontal space on small screens.
+        */
+        width: 100%;
+    }
+    
+    /* 
+      Adjust table font size for small screens
+    */
+    #scoreboard table {
+        /* 
+          Smaller font (14px instead of 16px)
+          Fits more content in limited space.
+        */
+        font-size: 14px;
+    }
+    
+    /* 
+      Adjust iframes for small screens
+    */
+    iframe {
+        /* 
+          Full width (100%) with !important
+          Overrides any width set elsewhere (like in HTML).
+          !important is needed here to override inline styles.
+        */
+        width: 100% !important;
+        
+        /* 
+          Auto height (maintains aspect ratio)
+          Height adjusts based on width to keep correct proportions.
+        */
+        height: auto;
+        
+        /* 
+          Minimum height of 300px
+          Ensures iframes aren't too squished vertically.
+        */
+        min-height: 300px;
+    }
+    
+    /* 
+      Adjust ordered list padding for small screens
+    */
+    #tips ol {
+        /* 
+          Smaller padding (20px instead of 20px 400px)
+          400px side padding was WAY too much for small screens!
+          Now uses equal padding on all sides.
+        */
+        padding: 20px;
+        
+        /* 
+          Smaller margins (20px instead of 20px auto)
+          On small screens, less margin needed.
+        */
+        margin: 20px;
+    }
+}
+
+/* 
+  @media (max-width: 480px) - For PHONES
+  Applies these styles ONLY when screen is 480px wide or LESS.
+  480px is a common breakpoint for mobile phones.
+*/
+@media (max-width: 480px) {
+    /* 
+      Further adjustments for very small screens
+    */
+    
+    /* 
+      Smaller base font size for entire page
+    */
+    body {
+        /* 
+          14px instead of default (usually 16px)
+          Everything becomes slightly smaller to fit more content.
+        */
+        font-size: 14px;
+    }
+    
+    /* 
+      Smaller h2 headings
+    */
+    h2 {
+        /* 
+          24px instead of 28-32px
+          Still larger than body text but not overwhelmingly large.
+        */
+        font-size: 24px;
+    }
+    
+    /* 
+      Smaller h3 headings
+    */
+    h3 {
+        /* 
+          20px instead of larger sizes
+          Proportionally smaller for small screens.
+        */
+        font-size: 20px;
+    }
+    
+    /* 
+      Make buttons full width on phones
+    */
+    button {
+        /* 
+          DISPLAY: BLOCK = Full width buttons
+          Makes buttons easier to tap on touch screens.
+        */
+        display: block;
+        
+        /* 
+          Full width (100%)
+          Uses all available horizontal space.
+        */
+        width: 100%;
+        
+        /* 
+          Margin above and below only (no side margins)
+          When buttons are full width, side margins would cause overflow.
+        */
+        margin: 10px 0;
+    }
+    
+    /* 
+      Adjust character gallery for phones
+    */
+    figure {
+        /* 
+          DISPLAY: BLOCK = Stack figures vertically
+          On phones, side-by-side images get too small.
+          Vertical stacking is better!
+        */
+        display: block;
+        
+        /* 
+          Auto margins to center each figure
+          15px auto means:
+          - 15px = Top and bottom margin
+          - auto = Center horizontally
+        */
+        margin: 15px auto;
+    }
+}
+
+/* 
+  ===========================================================================
+  PART 12: ACCESSIBILITY FEATURES - FOR EVERYONE!
+  ===========================================================================
+  Accessibility means making our website usable by EVERYONE, including:
+  - People using keyboards instead of mice
+  - People with visual impairments
+  - People who prefer high contrast
+  - People sensitive to motion
+  - People who print webpages
+  
+  Good accessibility = Good design for ALL humans!
+*/
+
+/* 
+  Focus styles for keyboard navigation
+  When users navigate with TAB key (instead of mouse), 
+  these styles show which element is currently selected.
+*/
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    /* 
+      Blue outline around focused elements
+      3px solid #0066cc = 3px thick solid blue outline.
+      Much more visible than default browser outlines!
+    */
+    outline: 3px solid #0066cc;
+    
+    /* 
+      2px outline offset = Space between element and outline
+      Makes outline stand out more clearly.
+    */
+    outline-offset: 2px;
+}
+
+/* 
+  @media (prefers-contrast: high) - High Contrast Mode
+  Applies when user has enabled high contrast mode in their system.
+  Some people need high contrast to see content clearly.
+*/
+@media (prefers-contrast: high) {
+    /* 
+      High contrast styles for body
+    */
+    body {
+        /* 
+          Pure white background (maximum contrast)
+          Instead of light blue (#f0f8ff).
+        */
+        background-color: white;
+        
+        /* 
+          Pure black text (maximum contrast)
+          Instead of dark gray (#333).
+        */
+        color: black;
+    }
+    
+    /* 
+      High contrast styles for links
+    */
+    a {
+        /* 
+          Blue links (standard for high contrast)
+          Instead of various colors we use elsewhere.
+        */
+        color: blue;
+        
+        /* 
+          Underlined links (standard visual indicator)
+          Makes links clearly identifiable.
+        */
+        text-decoration: underline;
+    }
+}
+
+/* 
+  @media (prefers-reduced-motion: reduce) - Reduce Motion
+  Applies when user has enabled "reduce motion" in their system.
+  Some people get dizzy or sick from animations.
+*/
+@media (prefers-reduced-motion: reduce) {
+    /* 
+      Target ALL elements with universal selector
+    */
+    * {
+        /* 
+          Nearly instant animations (0.01ms)
+          !important overrides ALL animation durations.
+        */
+        animation-duration: 0.01ms !important;
+        
+        /* 
+          Animations play only once (not infinite)
+          !important overrides ALL animation iteration counts.
+        */
+        animation-iteration-count: 1 !important;
+        
+        /* 
+          Nearly instant transitions (0.01ms)
+          !important overrides ALL transition durations.
+        */
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 
+  @media print - Print Styles
+  Applies when user PRINTS the webpage.
+  Makes printed pages clean and readable (no wasted ink!).
+*/
+@media print {
+    /* 
+      Hide elements not needed for printing
+      Selects multiple elements at once.
+    */
+    .main-nav,
+    audio,
+    video,
+    iframe,
+    form,
+    footer {
+        /* 
+          DISPLAY: NONE = Completely remove from print
+          Saves ink and paper - users don't need interactive elements on paper!
+        */
+        display: none;
+    }
+    
+    /* 
+      Print-friendly colors for body
+    */
+    body {
+        /* 
+          White background (saves printer ink)
+          Colored backgrounds use lots of ink!
+        */
+        background-color: white;
+        
+        /* 
+          Black text (maximum readability on paper)
+          Dark text on white paper = standard for printing.
+        */
+        color: black;
+        
+        /* 
+          12pt font size (good for printing)
+          pt = points (print measurement, different from px)
+          12pt is standard for printed documents.
+        */
+        font-size: 12pt;
+    }
+    
+    /* 
+      Print styles for links
+    */
+    a {
+        /* 
+          Black text for links (saves color ink)
+          On paper, blue links don't help much.
+        */
+        color: black;
+        
+        /* 
+          Underline links (shows they're clickable online)
+          Even though they won't work on paper, users should know.
+        */
+        text-decoration: underline;
+    }
+    
+    /* 
+      Add URL after links for printed pages
+      ::after pseudo-element adds content AFTER links.
+    */
+    a[href]::after {
+        /* 
+          Content: " (URL)" = Shows the link destination
+          attr(href) gets the URL from the href attribute.
+          Users can type the URL if they want to visit the link later!
+        */
+        content: " (" attr(href) ")";
+    }
+}
+
+/* 
+  ===========================================================================
+  END OF OUR AMAZING CSS FILE!
+  ===========================================================================
+  
+  Congratulations! You've just explored a complete CSS file with:
+  - 12 major sections
+  - Over 200 detailed comments
+  - Styles for EVERY element in our HTML
+  - Responsive design for all devices
+  - Accessibility features for everyone
+  - Fun animations and effects
+  
+  Remember: CSS is like magic paint for websites!
+  With these tools, you can make ANY website look amazing.
+  
+  Keep practicing, keep experimenting, and most importantly...
+  HAVE FUN WITH CODE! 🎨✨
+*/

@@ -1,0 +1,1583 @@
+
+
+
+# ==========================================
+#   MODULE: C:/Users/temba/OneDrive/Desktop/Online Classes/kidcode\Web2
+# ==========================================
+
+
+# ===== FILE: index.html =====
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- The head section holds important information about the page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Wonderland - Game Foundation</title>
+</head>
+
+<body>
+    <!-- This is our Header. The header element holds the main title and navigation links. -->
+    <header id="main-header">
+        <!-- The navigation element groups all the links used to move around the website. -->
+        <nav class="main-nav">
+            <!-- The unordered list element holds the list items for the navigation links. -->
+            <ul>
+                <!-- List Item with a link to the home page. -->
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <!-- List Item with a link to the about page. -->
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <!-- List Item with a link to the tips section. -->
+                <li><a href="tips" class="nav-link">Tips</a></li>
+                <!-- List Item with a link to the contact page. -->
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- First section: Home -->
+    <!-- We give this section a class name so we can style it easily with CSS later! -->
+    <section id="home" class="content-section">
+        <h2>Home</h2> <!-- Title of this section -->
+        <!-- We use an ID here so JavaScript can easily find this specific paragraph! -->
+        <p id="greeting-text">Hello, young <b>coders!</b> Today we will learn how to make a game using <strong>javaScript</strong>. 🌟</p>
+        <!-- Paragraph with a greeting -->
+        <!-- We use the line break element <br> to force a new line, like writing poetry! -->
+        <p><u>Are you ready</u> to meet your game <u>characters</u> and <u>learn fun tricks?</u> <br> This is our awesome game! </p>
+        <!-- Another paragraph -->
+    </section>
+
+
+    <!-- this is my second section       -->
+    <section id="tips">
+        <!-- This section is called "tips" and groups all the content about characters -->
+
+        <h2>Meet the characters</h2>
+        <!-- h2 is a big heading, introducing the section -->
+
+        <h3> Sparky the Dragon</h3>
+        <!-- h3 is a smaller heading, naming a character -->
+
+        <p> Sparky is a brave little dragon who loves to collect shiny gems. ✨</p>
+        <!-- p is a paragraph describing Sparky -->
+
+        <h3> Gloomy the Ghost</h3>
+        <!-- Another character heading -->
+
+        <img src="./gloomy.jp" alt="Gloomy">
+        <!-- img displays an image of Gloomy
+            src = the path to the image
+            alt = text shown if image doesn't load (good for accessibility) -->
+
+        <h3> Accessing an External Link</h3>
+        <!-- Heading about links -->
+
+        <p> Do you want to see where this 
+            <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> link takes us?
+        </p>
+        <!-- a = hyperlink
+            href = address to go to
+            target="_blank" = opens link in a new tab -->
+
+        <h4>Gloomy's Sneaky Plan:</h4>
+        <!-- h4 is a smaller heading -->
+
+        <ol>
+            <!-- ol = ordered list (numbered) -->
+            <li>Hide all gems</li> <!-- li = list item -->
+            <li>Create spooky illusions.</li>
+            <li>Run away after then.</li>
+        </ol>
+
+        <!-- Audio section -->
+        <audio 
+            id="game-music"     <!-- unique name to find this audio in JavaScript -->
+            controls            <!-- shows play/pause and volume buttons for user -->
+            autoplay            <!-- tries to start playing automatically -->
+            loop                <!-- repeats the audio forever -->
+            muted               <!-- starts muted (helps autoplay work on all browsers) -->
+            preload="auto"      <!-- tells browser to load audio as soon as possible -->
+            > 
+            <source src="./sound.mp3" type="audio/mpeg">
+            <!-- source = path to audio file
+                type = format of the audio (mp3) -->
+            Your browser does not support the audio element. Game music failed to load.
+            <!-- fallback text if browser can't play audio -->
+        </audio>
+
+        <!-- Video section -->
+        <video 
+            id="video"           <!-- unique name for JavaScript access -->
+            controls             <!-- shows play/pause, volume, and fullscreen buttons -->
+            autoplay             <!-- tries to play automatically -->
+            muted                <!-- starts muted (needed for autoplay) -->
+            loop                 <!-- repeats the video forever -->
+            preload="auto"       <!-- loads video as soon as possible -->
+            playsinline          <!-- keeps video inline on mobile (no fullscreen forced) -->
+            width="640"          <!-- width of the video player -->
+            height="360"         <!-- height of the video player -->
+            poster="poster.jpg"  <!-- image shown before video starts playing -->
+            >
+            <source src="video.mp4" type="video/mp4">
+            <!-- source = path to video file
+                type = format of the video (mp4) -->
+            Your browser does not support the video tag.
+            <!-- fallback text if browser can't play video -->
+        </video>
+
+    </section>
+
+
+    <!-- ========== NEW SECTION: SCOREBOARD TABLE ========== -->
+<section id="scoreboard">
+    <!-- This section shows a table of players and their scores -->
+
+    <h2>🏆 Player Scoreboard</h2>
+    <!-- h2 = big heading for the section -->
+
+    <!-- Start of the table -->
+    <table 
+        border="4"        <!-- border thickness (how thick the lines are) -->
+        cellpadding="10"  <!-- space inside each cell (makes content not stick to edges) -->
+        cellspacing="5"   <!-- space between cells -->
+        width="70%"       <!-- how wide the table is relative to the page -->
+        align="center"    <!-- positions table in the center of the page -->
+        bgcolor="#f0f8ff" <!-- background color of the table -->
+        bordercolor="blue" <!-- color of the table borders -->
+    >
+        <!-- caption = title shown above the table -->
+        <caption>Game Round Results</caption>
+
+        <!-- Header row -->
+        <tr>
+            <!-- th = table header cell (bold & centered by default) -->
+            <th>Player Name</th>   <!-- Name of the player -->
+            <th>Character</th>     <!-- Character chosen by the player -->
+            <th>Score</th>         <!-- Player's points -->
+            <th>Level Reached</th> <!-- Last level the player reached -->
+        </tr>
+
+        <!-- 1st data row -->
+        <tr>
+            <td>Emma</td>       <!-- td = table data cell -->
+            <td>Sparky</td>     
+            <td>850</td>        
+            <td>Level 5</td>    
+        </tr>  
+
+        <!-- 2nd data row -->
+        <tr>
+            <td>Inna</td>
+            <td>Spooky</td>
+            <td>80</td>
+            <td>Level 2</td>
+        </tr> 
+
+    </table>
+    <!-- End of table -->
+
+</section>
+<!-- End of scoreboard section -->
+
+
+    <!-- ========== NEW SECTION: PLAYER SIGN-UP FORM ========== -->
+    <section id="signup">
+        <h2>📝 Join the Adventure!</h2>
+
+        <form>
+            <!-- Text Input -->
+            <label for="player-name">Player Name:</label>
+            <input type="text" id="player-name" name="player-name" placeholder="Enter your name" required>
+            <br><br>
+
+            <!-- Email Input -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br><br>
+
+            <!-- Dropdown Selection -->
+            <label for="character">Choose Your Character:</label>
+            <select id="character" name="character">
+                <option value="sparky">Sparky the Dragon</option>
+                <option value="gloomy">Gloomy the Ghost</option>
+                <option value="pixie">Pixie the Elf</option>
+            </select>
+            <br><br>
+
+            <!-- Textarea -->
+            <label for="message">Your Player Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="30" placeholder="Write something fun..."></textarea>
+            <br><br>
+
+            <!-- Buttons -->
+            <button type="submit">Join Game</button>
+            <button type="reset">Clear</button>
+        </form>
+    </section>
+
+
+    <!-- ========== NEW SECTION: HTML FUN LESSONS 🎨🌍 ========== -->
+<section id="html-fun-lessons">
+    <h2>🎨🌍 Fun HTML Lessons: Characters, Canvas, and Iframes</h2>
+
+    <p>In this section, we will explore three exciting HTML topics: 
+        <strong>Character Gallery</strong>, <strong>Canvas Playground</strong>, and <strong>Iframes</strong>.
+        Each part is purely HTML — no CSS or JavaScript needed — perfect for learning step by step!
+    </p>
+
+    <!-- =================== CHARACTER GALLERY =================== -->
+    <h3>1️⃣ Character Gallery</h3>
+    <p>Below are our game characters. Each picture uses &lt;figure&gt; and &lt;figcaption&gt; for semantic labeling.</p>
+
+    <!-- Character 1 -->
+    <figure>
+        <!-- img = displays an image -->
+        <!-- src = path to the image file -->
+        <!-- alt = description for accessibility -->
+        <!-- width = size of the image -->
+        <img src="./sparky.jpg" alt="Sparky the Dragon" width="200">
+        <!-- figcaption = label under the image -->
+        <figcaption>🔥 Sparky the Dragon</figcaption>
+    </figure>
+
+    <!-- Character 2 -->
+    <figure>
+        <img src="./gloomy.jpg" alt="Gloomy the Ghost" width="200">
+        <figcaption>👻 Gloomy the Ghost</figcaption>
+    </figure>
+
+    <!-- Character 3 -->
+    <figure>
+        <img src="./pixie.jpg" alt="Pixie the Elf" width="200">
+        <figcaption>🧚 Pixie the Elf</figcaption>
+    </figure>
+
+    <p>Try changing the <code>width</code> numbers to make characters bigger or smaller!</p>
+
+    <!-- =================== CANVAS INTRO =================== -->
+    <h3>2️⃣ Canvas Playground (HTML Only)</h3>
+    <p>
+        The <strong>&lt;canvas&gt;</strong> tag creates a blank drawing area.
+        Later we will use JavaScript to draw shapes, characters, or games. 
+        For now, we are just placing it on the page.
+    </p>
+
+    <!-- The canvas element -->
+    <!-- id = unique name to reference later in JavaScript -->
+    <!-- width = horizontal size -->
+    <!-- height = vertical size -->
+    <canvas id="myCanvas" width="600" height="300"></canvas>
+
+    <p>
+        Right now, it is empty because drawing requires JavaScript.
+        But it’s a good start to understand how the canvas is placed on the page.
+    </p>
+
+    <h4>🧠 Key Points to Remember</h4>
+    <ul>
+        <li>&lt;canvas&gt; creates a drawing area</li>
+        <li><strong>width</strong> controls how wide it is</li>
+        <li><strong>height</strong> controls how tall it is</li>
+        <li>It does nothing yet — drawing comes later with JavaScript</li>
+    </ul>
+
+    <h4>Try This!</h4>
+    <p>Change the width and height numbers and refresh the page to see how the canvas size changes.</p>
+
+    <pre>
+&lt;canvas id="myCanvas" width="300" height="150"&gt;&lt;/canvas&gt;
+    </pre>
+
+    <!-- =================== IFRAME & EMBEDDED CONTENT =================== -->
+    <h3>3️⃣ Explore the World with Iframes</h3>
+    <p>
+        The <strong>&lt;iframe&gt;</strong> tag lets us embed another webpage, video, or map inside our own page.
+        Think of it as a magic window to another world!
+    </p>
+
+    <h4>Example 1: YouTube Video</h4>
+    <p>Embed a video directly in your page.</p>
+    <iframe 
+        width="560" 
+        height="315"
+        src="https://www.youtube.com/watch?v=O78CxqRl7NE&pp=ugUEEgJlbg%3D%3D" 
+        title="YouTube video player"
+        allowfullscreen>
+    </iframe>
+
+    <h4>Example 2: Google Map</h4>
+    <p>Show a location or game studio on a map!</p>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.4251382182524!2d-122.08424908467918!3d37.42206597982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0b3f07e4c7d%3A0xdef6a3b7b5b66c09!2sGoogleplex!5e0!3m2!1sen!2sus!4v1615804698182!5m2!1sen!2sus"
+        width="560" 
+        height="315"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+
+    <h4>Example 3: Another Website</h4>
+    <p>We can display another webpage inside our page, like W3Schools!</p>
+    <iframe 
+        src="https://www.w3schools.com" 
+        width="560" 
+        height="315">
+    </iframe>
+
+    <h4>🧠 Key Points to Remember</h4>
+    <ul>
+        <li>&lt;iframe&gt; = inline frame</li>
+        <li>Allows embedding of videos, maps, or entire webpages</li>
+        <li><strong>src</strong> = URL of the content to display</li>
+        <li><strong>width</strong> & <strong>height</strong> = size of the window</li>
+        <li><strong>allowfullscreen</strong> lets users watch in full screen</li>
+    </ul>
+
+    <!-- =================== END OF COMBINED SECTION =================== -->
+    <p>Great job! You’ve learned three new HTML concepts:
+        <strong>figures</strong>, <strong>canvas</strong>, and <strong>iframes</strong>.
+        Each of them adds more power and fun to your webpages.
+    </p>
+</section>
+
+
+    <!-- ========== NEW SECTION: ARTICLE & ASIDE ========== -->
+    <article>
+        <h2>Developer Notes</h2>
+        <p>This <span style="font-weight:bold;">Code Wonderland</span> project teaches kids how to build a fun, interactive game website using simple HTML first, then CSS and JavaScript later.</p>
+    </article>
+
+    <aside>
+        <h3>💡 Quick Tip</h3>
+        <p>Always close your tags properly! HTML works best when it’s neat and clean.</p>
+    </aside>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+    </footer>
+
+</body>
+
+</html>
+
+# ===== FILE: Project1.html =====
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Catcher Game</title>
+</head>
+
+<body style="width: 100%; max-width: 600px; margin: 0; padding: 20px; background-color: skyblue;">
+    <!-- Main Game Container -->
+    <div style="width: 100%; max-width: 600px; margin: 0; padding: 20px; color: white;">
+        <section>
+            <!-- Game Header -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: white;">
+                <h1 style="margin: 0; font-size: 24px;">Fruit Catcher</h1>
+                <div style="font-size: 24px;">
+                    <span>SCORE:</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Game Area -->
+            <div
+                style="background-color: rgb(255, 255, 225, 0.3); border-radius: 10px; padding: 15px; border: 2px solid rgb(255, 255, 225, 0.5);">
+                <!-- Game Canvas (Static representation) -->
+                <div
+                    style="background-color: rgb(255, 255, 225, 0.5); height: 400px; border-radius: 5px; position:relative; overflow: hidden;">
+                    <!-- Basket (Player) -->
+                    <div
+                        style="position: absolute; bottom: 30px; left: 260px; width: 80px; height: 20px; background-color: #8B4513;">
+                        <!-- Basket rim -->
+                        <div
+                            style="position: absolute; top: -5px; width: 90px; height: 5px; background-color: #A0522D;">
+                        </div>
+                    </div>
+                    <!-- Static fruits positioned at different heights -->
+                    <div style="position: absolute; top: 50px; left:100px; font-size: 30px;">🍎</div>
+                    <div style="position: absolute; top: 100px; left:200px; font-size: 30px;">🍌</div>
+                    <div style="position: absolute; top: 150px; left:300px; font-size: 30px;">🍇</div>
+                    <div style="position: absolute; top: 200px; left:400px; font-size: 30px;">🍓</div>
+
+                </div>
+                <!-- Game instructions for players -->
+                <div style="text-align:  center; color: white; margin-top: 10px; font-size: 14px;"> Use ◀️ and ▶️ arrow keys to move the basket!</div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Game Controls Explanation -->
+            <div style="background-color: rgb(255, 255, 225, 0.3); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                <h2 style="color: white; margin-top: 0;">How the game works</h2>
+                <p style="color: white;">In a real game, you would use Javascript to:</p>
+                <ul style="color: white;">
+                    <li>Move the basket with arrow keys</li>
+                    <li>Make fruits fall from the top</li>
+                    <li>Detect when fruits hit the basket</li>
+                    <li>Update the score when you catch fruits</li>
+                </ul>
+
+                <p style="color: white;">So since we're using HTML, this is a static representation of what the game would look like</p>
+            </div>
+        </section>
+
+        <section>
+            <!-- Game Elements Explanation -->
+            <div style="background-color: rgb(255, 255, 225, 0.3); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                <h2 style="color: white; margin-top: 0;">Game Elements</h2>
+                <!--The Basket we control-->
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div style="width: 80px; height: 20px; background-color: #8B4513; margin-right: 10px; position: relative;">
+                        <div style="position: absolute; top: -5px; left: -5px; width: 90px; height: 5px; background-color: #A0522D;"></div>
+                    </div>
+                    <span style="color: white;"> This is the basket that you control</span>
+                </div>
+                <!--The fruits we need to catch -->
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <span style="font-size: 30px; margin-right: 10px;">🍎</span>
+                    <span style="color: white;">These are the fruits you need to catch</span>
+                </div>
+                <!--Where the game happens-->
+                <div style="display: flex; align-items: center;">
+                    <div style="width: 100%; height: 100px; background-color: rgb(255, 255, 225, 0.5); margin-right: 10px; display: flex; align-items: center; justify-content: center; color: #666; border-radius: 5px;">
+                        Game Area
+                    </div>
+                </div>
+                <span  style="color: white;">This is where the game happens</span>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
+
+# ===== FILE: project2.html =====
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title> Super Mario Adventure</title>
+</head>
+
+<body style="width: 100%; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #87CEEB;">
+    <!-- Main Game Container-->
+    <div style="width: 100%; max-width: 800px; margin: 0; padding: 20px; color: white;">
+        <section>
+            <!-- Game Header-->
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: white;">
+                <h1 style="margin: 0; font-size: 24px;"> Super Mario Adventure</h1>
+                <div style="font-size: 24px;">
+                    <span>Score</span>
+                    <span>0</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!--Game Area-->
+            <div
+                style="background-color: rgba(255, 255, 225, 0.292); border-radius: 10px; padding: 15px; border: 2px solid rgb(255, 255, 225, 0.5);">
+                <!--Game Canvas-->
+                <div
+                    style="background-color: #6B8CFF; height: 400px; border-radius: 5px; position:relative; overflow: hidden;">
+                    <!-- Sky Background -->
+                    <div div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #87CEEB, #1E90FF);">
+                    </div>
+                    <!-- Ground-->
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50px; background-color: #8B4513;">
+                    </div>
+                    <!--Platform-->
+                    <div
+                        style="position: absolute; bottom: 100px; left: 200px; width: 200px; height: 20px; background-color: #A0522D;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 150px; left: 500px; width: 150px; height: 20px; background-color: #A0522D;">
+                    </div>
+                    <!--Player Character-->
+                    <div
+                        style="position: absolute; bottom: 120px; left: 250px; width: 32px; height: 48px; background-color: #E52521;">
+                        <!-- Player Details -->
+                        <div
+                            style="position: absolute; top: 10px; left: 5px; width: 22px; height: 15px; background-color: #FBC02D;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 25px; left: 5px; width: 22px; height: 23px; background-color: #1E40AF;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 0; left: -5px; width: 42px; height: 10px; background-color: #E52521;">
+                        </div>
+                    </div>
+                    <!--Enemies-->
+                    <div
+                        style="position: absolute; bottom: 50px; left: 400px; width: 32px; height: 32px; background-color: #6B238E;">
+                        <div
+                            style="position: absolute; top: 5px; left: 5px; width: 22px; height: 22px; background-color: #4B0082;">
+                        </div>
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 170px; left: 550px; width: 32px; height: 32px; background-color: #228B22;">
+                        <div
+                            style="position: absolute; top: 5px; left: 5px; width: 22px; height: 22px; background-color: #006400;">
+                        </div>
+                    </div>
+                    <!--Coins-->
+                    <div
+                        style="position: absolute; top: 100px; left: 300px; width: 20px; height: 20px; background-color: #FFD700; border-radius: 50%;">
+                    </div>
+                    <div
+                        style="position: absolute; top: 120px; left: 600px; width: 20px; height: 20px; background-color: #FFD700; border-radius: 50%;">
+                    </div>
+                    <div
+                        style="position: absolute; top: 80px; left: 450px; width: 20px; height: 20px; background-color: #FFD700; border-radius: 50%;">
+                    </div>
+                    <!--Flag (end game)-->
+                    <div
+                        style="position: absolute; bottom: 50px; right: 100px; width: 10px; height: 350px; background-color: #FF0000;">
+                    </div>
+                    <div
+                        style="position: absolute; top: 50px; right: 110px; width: 40px; height: 30px; background-color: #FFFFFF; clip-path: polygon(100% 0, 50% 500%, 0 100%);">
+                    </div>
+                    <!--Instructions-->
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Game Controls Explanation -->
+            <div
+                style="background-color: rgba(255, 255, 225, 0.258); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                <h2 style="color: white; margin-top: 0;">How the game works</h2>
+                <p style="color: white;">In a real game, you would use JavaScript to:</p>
+                <ul style="color: white;">
+                    <li>Move the player with arrow keys</li>
+                    <li>Make enemies move back and forth</li>
+                    <li>Detect when player collects coins</li>
+                    <li>Check collisions with enemies</li>
+                    <li>Update score when you reach the flag</li>
+                </ul>
+
+                <p style="color: white;">Since we're using HTML, this is a static representation of what the game would
+                    look like</p>
+            </div>
+        </section>
+
+        <section>
+            <!-- Game Elements Explanation -->
+            <div
+                style="background-color: rgb(255, 255, 225, 0.3); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                <h2 style="color: white; margin-top: 0;">Game Elements</h2>
+                <!--The Player we control-->
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div
+                        style="width: 32px; height: 48px; background-color: #E52521; margin-right: 10px; position: relative;">
+                        <div
+                            style="position: absolute; top: 10px; left: 5px; width: 22px; height: 15px; background-color: #FBC02D;">
+                        </div>
+                        <div
+                            style="position: absolute; top: 25px; left: 5px; width: 22px; height: 23px; background-color: #1E40AF;">
+                        </div>
+                    </div>
+                    <span style="color: white;"> This is your player character that you control</span>
+                </div>
+                <!--The Enemies we need to avoid-->
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div
+                        style="width: 32px; height: 32px; background-color: #6B238E; margin-right: 10px; position: relative;">
+                        <div
+                            style="position: absolute; top: 5px; left: 5px; width: 22px; height: 22px; background-color: #4B0082;">
+                        </div>
+                    </div>
+                    <span style="color: white;"> These are enemies you need to avoid or jump on</span>
+                </div>
+                <!--The Coins we collect-->
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <div
+                        style="width: 20px; height: 20px; background-color: #FFD700; border-radius: 50%; margin-right: 10px;">
+                    </div>
+                    <span style="color: white;"> Collect these coins to increase your score</span>
+                </div>
+                <!--The Flagpole we reach to win-->
+                <div style="display: flex; align-items: center;">
+                    <div
+                        style="width: 10px; height: 60px; background-color: #FF0000; margin-right: 10px; position: relative;">
+                        <div
+                            style="position: absolute; top: 0; left: 10px; width: 30px; height: 20px; background-color: #FFFFFF; clip-path: polygon(100% 0, 100% 50%, 0 100%);">
+                        </div>
+                    </div>
+                    <span style="color: white;"> Reach the flag to complete the level!</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Character Gallery -->
+            <div style="background-color: rgb(255, 255, 225, 0.3); border-radius: 10px; padding: 15px; margin-top: 20px;">
+                <h2 style="color: white; margin-top: 0;">Character Gallery</h2>
+                <div style="display: flex; justify-content: space-around; margin-top: 15px;">
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 96px; background-color: #E52521; margin: 0 auto; position: relative;">
+                            <div style="position: absolute; top: 20px; left: 10px; width: 44px; height: 30px; background-color: #FBC02D;"></div>
+                            <div style="position: absolute; top: 50px; left: 10px; width: 44px; height: 46px; background-color: #1E40AF;"></div>
+                        </div>
+                        <p style="color: white; margin-top: 5px;">Mario Hero</p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 64px; height: 64px; background-color: #6B238E; margin: 0 auto; position: relative;">
+                            <div style="position: absolute; top: 10px; left: 10px; width: 44px; height: 44px; background-color: #4B0082;"></div>
+                        </div>
+                        <p style="color: white; margin-top: 5px;">Evil Turtle</p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 40px; height: 40px; background-color: #FFD700; border-radius: 50%; margin: 0 auto;"></div>
+                        <p style="color: white; margin-top: 5px;">Gold Coin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
+
+# ===== FILE: script.js =====
+
+
+
+# ===== FILE: games\fruit_game.html =====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Catcher Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            overflow: hidden; /* Prevents scrollbars from appearing */
+        }
+        /* Simple modal styles for start/end game messages */
+        .modal {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-sky-600 flex items-center justify-center h-screen">
+
+    <!-- Main Game Container -->
+    <div id="game-wrapper" class="w-full max-w-2xl mx-auto p-4">
+        <div class="bg-white/30 backdrop-blur-sm rounded-xl shadow-2xl p-4 border-2 border-white/50">
+            <!-- Header with Title and Score -->
+            <div class="flex justify-between items-center mb-4 px-2 text-white">
+                <h1 class="text-lg sm:text-2xl">Fruit Catcher</h1>
+                <div class="text-lg sm:text-2xl">
+                    <span>SCORE:</span>
+                    <span id="scoreEl">0</span>
+                </div>
+            </div>
+
+            <!-- The Game Canvas -->
+            <canvas id="gameCanvas" class="bg-white/50 rounded-lg shadow-inner border-2 border-white/50"></canvas>
+            
+            <!-- Instructions -->
+            <div class="text-center text-white mt-4 text-xs sm:text-sm">
+                Use ◀️ and ▶️ arrow keys to move the basket!
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Start Game Message -->
+    <div id="startModal" class="modal">
+        <div class="p-8 bg-white rounded-lg shadow-xl text-gray-800">
+            <h2 class="text-3xl font-bold mb-4">Ready to Play?</h2>
+            <p class="mb-6">Catch as many fruits as you can!</p>
+            <button id="startGameBtn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                Start Game
+            </button>
+        </div>
+    </div>
+
+
+    <script>
+        // --- DOM Elements ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreEl = document.getElementById('scoreEl');
+        const startModal = document.getElementById('startModal');
+        const startGameBtn = document.getElementById('startGameBtn');
+
+        // --- Game Configuration ---
+        let canvasWidth = 600;
+        let canvasHeight = 400;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+
+        let score = 0;
+        let gameRunning = false;
+        const fruitEmojis = ['🍎', '🍌', '🍇', '🍓', '🍊', '🥝', '🍉'];
+
+        // --- Player (Basket) ---
+        const basket = {
+            width: 80,
+            height: 20,
+            x: canvas.width / 2 - 40,
+            y: canvas.height - 30,
+            speed: 15,
+            dx: 0 // change in x direction
+        };
+        
+        // --- Fruits ---
+        let fruits = [];
+        const fruitSpawnRate = 1000; // milliseconds
+        let lastFruitSpawnTime = 0;
+
+        // --- Input Handling ---
+        const keys = {
+            right: false,
+            left: false
+        };
+
+        function keyDown(e) {
+            if (e.key === 'ArrowRight' || e.key === 'Right') {
+                keys.right = true;
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                keys.left = true;
+            }
+        }
+
+        function keyUp(e) {
+            if (e.key === 'ArrowRight' || e.key === 'Right') {
+                keys.right = false;
+            } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+                keys.left = false;
+            }
+        }
+
+        document.addEventListener('keydown', keyDown);
+        document.addEventListener('keyup', keyUp);
+
+        // --- Drawing Functions ---
+        function drawBasket() {
+            ctx.beginPath();
+            ctx.rect(basket.x, basket.y, basket.width, basket.height);
+            ctx.fillStyle = '#8B4513'; // SaddleBrown color
+            ctx.fill();
+            ctx.closePath();
+            
+            // Add a little rim to the basket
+            ctx.beginPath();
+            ctx.rect(basket.x - 5, basket.y, basket.width + 10, 5);
+            ctx.fillStyle = '#A0522D'; // Sienna color
+            ctx.fill();
+            ctx.closePath();
+        }
+        
+        function createFruit() {
+            const size = 30;
+            fruits.push({
+                x: Math.random() * (canvas.width - size),
+                y: -size, // Start above the canvas
+                size: size,
+                speed: 2 + Math.random() * 2, // Random speed
+                emoji: fruitEmojis[Math.floor(Math.random() * fruitEmojis.length)]
+            });
+        }
+        
+        function drawFruits() {
+            fruits.forEach(fruit => {
+                ctx.font = `${fruit.size}px serif`;
+                ctx.fillText(fruit.emoji, fruit.x, fruit.y);
+            });
+        }
+
+        // --- Game Logic ---
+        function updateBasketPosition() {
+            basket.x += basket.dx;
+
+            // Wall detection
+            if (basket.x < 0) {
+                basket.x = 0;
+            }
+            if (basket.x + basket.width > canvas.width) {
+                basket.x = canvas.width - basket.width;
+            }
+        }
+
+        function handleMovement() {
+            if (keys.right) {
+                basket.dx = basket.speed;
+            } else if (keys.left) {
+                basket.dx = -basket.speed;
+            } else {
+                basket.dx = 0;
+            }
+        }
+        
+        function updateFruits() {
+            fruits.forEach((fruit, index) => {
+                fruit.y += fruit.speed;
+
+                // Remove fruit if it's off screen
+                if (fruit.y - fruit.size > canvas.height) {
+                    fruits.splice(index, 1);
+                }
+
+                // Collision detection with basket
+                if (
+                    fruit.x < basket.x + basket.width &&
+                    fruit.x + fruit.size > basket.x &&
+                    fruit.y < basket.y + basket.height &&
+                    fruit.y + fruit.size > basket.y
+                ) {
+                    // Fruit caught
+                    score++;
+                    scoreEl.innerText = score;
+                    fruits.splice(index, 1);
+                }
+            });
+        }
+        
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function resizeCanvas() {
+            // The container is the direct parent of the canvas, which has the padding we need to account for.
+            const container = canvas.parentElement;
+            const computedStyle = window.getComputedStyle(container);
+
+            // Calculate the total horizontal padding (left + right) of the container.
+            const paddingX = parseFloat(computedStyle.paddingLeft) + parseFloat(computedStyle.paddingRight);
+            
+            // The canvas width should be the container's available inner width, minus its horizontal padding.
+            const newWidth = container.clientWidth - paddingX;
+
+            canvas.width = newWidth;
+            canvas.height = newWidth * (2 / 3); // Maintain aspect ratio to avoid distortion.
+            
+            // Re-center the basket whenever the canvas is resized.
+            basket.x = canvas.width / 2 - basket.width / 2;
+        }
+
+        // --- Main Game Loop ---
+        function gameLoop(timestamp) {
+            if (!gameRunning) return;
+
+            // Spawn new fruits
+            if (timestamp - lastFruitSpawnTime > fruitSpawnRate) {
+                createFruit();
+                lastFruitSpawnTime = timestamp;
+            }
+
+            clearCanvas();
+            
+            handleMovement();
+            updateBasketPosition();
+            drawBasket();
+
+            updateFruits();
+            drawFruits();
+
+            requestAnimationFrame(gameLoop);
+        }
+        
+        // --- Start & Reset ---
+        function initGame() {
+            score = 0;
+            scoreEl.innerText = 0;
+            fruits = [];
+            basket.x = canvas.width / 2 - basket.width / 2;
+            gameRunning = true;
+            startModal.style.display = 'none';
+            requestAnimationFrame(gameLoop);
+        }
+
+        // --- Event Listeners ---
+        startGameBtn.addEventListener('click', initGame);
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Initial resize to fit the screen correctly on load.
+        resizeCanvas();
+
+    </script>
+
+</body>
+</html>
+
+
+
+# ===== FILE: games\mario.html =====
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Plumber Adventure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Press Start 2P', cursive;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .game-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 4px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        #gameCanvas {
+            display: block;
+            background-color: #6B8CFF;
+        }
+        
+        .ui-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            text-shadow: 2px 2px 0 #000;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            z-index: 20;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        h1 {
+            color: #f8e71c;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-shadow: 3px 3px 0 #000;
+        }
+        
+        .btn {
+            background: #e52521;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 0 #8b0000;
+            transition: all 0.1s;
+        }
+        
+        .btn:hover {
+            background: #ff3333;
+            transform: translateY(2px);
+            box-shadow: 0 3px 0 #8b0000;
+        }
+        
+        .controls {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .controls p {
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        
+        .game-over {
+            background: rgba(139, 0, 0, 0.9);
+        }
+        
+        .game-over h1 {
+            color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <div class="ui-overlay">
+            <div>SCORE: <span id="score">0</span></div>
+            <div>COINS: <span id="coins">0</span></div>
+            <div>LIVES: <span id="lives">3</span></div>
+        </div>
+        
+        <div id="startScreen" class="screen">
+            <h1>SUPER PLUMBER ADVENTURE</h1>
+            <p>Rescue the kingdom from the evil turtles!</p>
+            <div class="controls">
+                <p>← → : Move Left & Right</p>
+                <p>SPACE : Jump</p>
+                <p>Collect coins and stomp on enemies!</p>
+            </div>
+            <button id="startButton" class="btn">START GAME</button>
+        </div>
+        
+        <div id="gameOverScreen" class="screen game-over hidden">
+            <h1>GAME OVER</h1>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <p>Coins Collected: <span id="finalCoins">0</span></p>
+            <button id="restartButton" class="btn">PLAY AGAIN</button>
+        </div>
+        
+        <div id="levelCompleteScreen" class="screen hidden">
+            <h1>LEVEL COMPLETE!</h1>
+            <p>Congratulations! You saved the kingdom!</p>
+            <p>Final Score: <span id="completeScore">0</span></p>
+            <button id="nextLevelButton" class="btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script>
+        // Game elements
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startScreen = document.getElementById('startScreen');
+        const gameOverScreen = document.getElementById('gameOverScreen');
+        const levelCompleteScreen = document.getElementById('levelCompleteScreen');
+        const startButton = document.getElementById('startButton');
+        const restartButton = document.getElementById('restartButton');
+        const nextLevelButton = document.getElementById('nextLevelButton');
+        const scoreElement = document.getElementById('score');
+        const coinsElement = document.getElementById('coins');
+        const livesElement = document.getElementById('lives');
+        const finalScoreElement = document.getElementById('finalScore');
+        const finalCoinsElement = document.getElementById('finalCoins');
+        const completeScoreElement = document.getElementById('completeScore');
+        
+        // Game state
+        let gameRunning = false;
+        let score = 0;
+        let coins = 0;
+        let lives = 3;
+        let cameraX = 0;
+        let levelComplete = false;
+        
+        // Player properties
+        const player = {
+            x: 100,
+            y: 300,
+            width: 32,
+            height: 48,
+            speed: 5,
+            velX: 0,
+            velY: 0,
+            jumping: false,
+            grounded: false,
+            color: '#E52521',
+            facingRight: true
+        };
+        
+        // Physics
+        const gravity = 0.5;
+        const friction = 0.8;
+        const jumpForce = -12;
+        
+        // Game objects
+        let platforms = [];
+        let coinsArray = [];
+        let enemies = [];
+        let flagpole = null;
+        
+        // Key states
+        const keys = {};
+        
+        // Initialize game objects
+        function initGameObjects() {
+            // Platforms (ground and platforms)
+            platforms = [
+                // Ground
+                { x: 0, y: 450, width: 2400, height: 50, color: '#8B4513' },
+                // Platforms
+                { x: 300, y: 350, width: 200, height: 20, color: '#8B4513' },
+                { x: 600, y: 300, width: 200, height: 20, color: '#8B4513' },
+                { x: 1000, y: 350, width: 200, height: 20, color: '#8B4513' },
+                { x: 1300, y: 250, width: 200, height: 20, color: '#8B4513' },
+                { x: 1700, y: 300, width: 200, height: 20, color: '#8B4513' },
+                { x: 2000, y: 200, width: 200, height: 20, color: '#8B4513' }
+            ];
+            
+            // Coins
+            coinsArray = [];
+            for (let i = 0; i < 20; i++) {
+                coinsArray.push({
+                    x: 200 + i * 100,
+                    y: 200 + Math.sin(i) * 100,
+                    width: 20,
+                    height: 20,
+                    collected: false,
+                    animation: 0
+                });
+            }
+            
+            // Enemies
+            enemies = [
+                { x: 400, y: 410, width: 32, height: 32, speed: 2, direction: 1, color: '#6B238E' },
+                { x: 800, y: 410, width: 32, height: 32, speed: 2, direction: -1, color: '#228B22' },
+                { x: 1200, y: 410, width: 32, height: 32, speed: 2, direction: 1, color: '#6B238E' },
+                { x: 1600, y: 410, width: 32, height: 32, speed: 2, direction: -1, color: '#228B22' },
+                { x: 2000, y: 160, width: 32, height: 32, speed: 2, direction: 1, color: '#6B238E' }
+            ];
+            
+            // Flagpole (end of level)
+            flagpole = { x: 2300, y: 150, width: 20, height: 300, color: '#FF0000' };
+        }
+        
+        // Event listeners
+        window.addEventListener('keydown', function(e) {
+            keys[e.key] = true;
+        });
+        
+        window.addEventListener('keyup', function(e) {
+            keys[e.key] = false;
+        });
+        
+        startButton.addEventListener('click', startGame);
+        restartButton.addEventListener('click', restartGame);
+        nextLevelButton.addEventListener('click', restartGame);
+        
+        // Start game function
+        function startGame() {
+            gameRunning = true;
+            startScreen.classList.add('hidden');
+            resetGame();
+            gameLoop();
+        }
+        
+        // Restart game function
+        function restartGame() {
+            gameOverScreen.classList.add('hidden');
+            levelCompleteScreen.classList.add('hidden');
+            resetGame();
+            gameLoop();
+        }
+        
+        // Reset game state
+        function resetGame() {
+            score = 0;
+            coins = 0;
+            lives = 3;
+            cameraX = 0;
+            levelComplete = false;
+            player.x = 100;
+            player.y = 300;
+            player.velX = 0;
+            player.velY = 0;
+            player.jumping = false;
+            
+            initGameObjects();
+            updateUI();
+        }
+        
+        // Update UI elements
+        function updateUI() {
+            scoreElement.textContent = score;
+            coinsElement.textContent = coins;
+            livesElement.textContent = lives;
+        }
+        
+        // Game over function
+        function gameOver() {
+            gameRunning = false;
+            finalScoreElement.textContent = score;
+            finalCoinsElement.textContent = coins;
+            gameOverScreen.classList.remove('hidden');
+        }
+        
+        // Level complete function
+        function completeLevel() {
+            gameRunning = false;
+            completeScoreElement.textContent = score;
+            levelCompleteScreen.classList.remove('hidden');
+        }
+        
+        // Check collisions between two rectangles
+        function checkCollision(rect1, rect2) {
+            return rect1.x < rect2.x + rect2.width &&
+                   rect1.x + rect1.width > rect2.x &&
+                   rect1.y < rect2.y + rect2.height &&
+                   rect1.y + rect1.height > rect2.y;
+        }
+        
+        // Handle collisions
+        function handleCollisions() {
+            // Reset grounded state
+            player.grounded = false;
+            
+            // Check collisions with platforms
+            platforms.forEach(platform => {
+                if (checkCollision(player, platform)) {
+                    // Calculate overlap on each side
+                    const overlapLeft = (player.x + player.width) - platform.x;
+                    const overlapRight = (platform.x + platform.width) - player.x;
+                    const overlapTop = (player.y + player.height) - platform.y;
+                    const overlapBottom = (platform.y + platform.height) - player.y;
+                    
+                    // Find the smallest overlap
+                    const minOverlap = Math.min(overlapLeft, overlapRight, overlapTop, overlapBottom);
+                    
+                    // Resolve collision based on the smallest overlap
+                    if (minOverlap === overlapTop) {
+                        // Collision from top (landing on platform)
+                        player.y = platform.y - player.height;
+                        player.velY = 0;
+                        player.grounded = true;
+                        player.jumping = false;
+                    } else if (minOverlap === overlapBottom) {
+                        // Collision from bottom (hitting head)
+                        player.y = platform.y + platform.height;
+                        player.velY = 0;
+                    } else if (minOverlap === overlapLeft) {
+                        // Collision from left
+                        player.x = platform.x - player.width;
+                        player.velX = 0;
+                    } else if (minOverlap === overlapRight) {
+                        // Collision from right
+                        player.x = platform.x + platform.width;
+                        player.velX = 0;
+                    }
+                }
+            });
+            
+            // Check collisions with coins
+            coinsArray.forEach(coin => {
+                if (!coin.collected && checkCollision(player, coin)) {
+                    coin.collected = true;
+                    coins++;
+                    score += 100;
+                    updateUI();
+                }
+            });
+            
+            // Check collisions with enemies
+            enemies.forEach(enemy => {
+                if (checkCollision(player, enemy)) {
+                    // If player is falling on enemy
+                    if (player.velY > 0 && player.y + player.height < enemy.y + enemy.height / 2) {
+                        // Defeat enemy
+                        enemy.x = -1000; // Move enemy far off screen
+                        player.velY = jumpForce * 0.7; // Bounce
+                        score += 200;
+                        updateUI();
+                    } else {
+                        // Player gets hurt
+                        lives--;
+                        updateUI();
+                        player.x = 100 + cameraX; // Reset player position with camera offset
+                        player.y = 300;
+                        
+                        if (lives <= 0) {
+                            gameOver();
+                        }
+                    }
+                }
+            });
+            
+            // Check collision with flagpole
+            if (flagpole && checkCollision(player, flagpole)) {
+                levelComplete = true;
+                completeLevel();
+            }
+        }
+        
+        // Update game state
+        function update() {
+            if (!gameRunning) return;
+            
+            // Apply gravity
+            player.velY += gravity;
+            
+            // Player movement
+            if (keys['ArrowLeft'] || keys['a']) {
+                player.velX = -player.speed;
+                player.facingRight = false;
+            } else if (keys['ArrowRight'] || keys['d']) {
+                player.velX = player.speed;
+                player.facingRight = true;
+            } else {
+                player.velX *= friction;
+            }
+            
+            // Jumping
+            if ((keys[' '] || keys['ArrowUp'] || keys['w']) && player.grounded) {
+                player.jumping = true;
+                player.grounded = false;
+                player.velY = jumpForce;
+            }
+            
+            // Update player position
+            player.x += player.velX;
+            player.y += player.velY;
+            
+            // Update camera to follow player
+            cameraX = player.x - 400;
+            if (cameraX < 0) cameraX = 0;
+            if (cameraX > 2400 - 800) cameraX = 2400 - 800;
+            
+            // Update enemies
+            enemies.forEach(enemy => {
+                enemy.x += enemy.speed * enemy.direction;
+                
+                // Enemy boundaries and direction change
+                let enemyOnPlatform = false;
+                platforms.forEach(platform => {
+                    if (enemy.x >= platform.x && enemy.x + enemy.width <= platform.x + platform.width &&
+                        enemy.y + enemy.height <= platform.y && enemy.y + enemy.height + 5 >= platform.y) {
+                        enemyOnPlatform = true;
+                    }
+                });
+                
+                if (!enemyOnPlatform || enemy.x <= 0 || enemy.x + enemy.width >= 2400) {
+                    enemy.direction *= -1;
+                }
+            });
+            
+            // Update coin animations
+            coinsArray.forEach(coin => {
+                coin.animation = (coin.animation + 0.1) % (Math.PI * 2);
+            });
+            
+            // Handle collisions
+            handleCollisions();
+        }
+        
+        // Render game objects
+        function render() {
+            // Clear canvas
+            ctx.fillStyle = '#6B8CFF';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw background elements (clouds and mountains)
+            drawBackground();
+            
+            // Draw platforms
+            platforms.forEach(platform => {
+                ctx.fillStyle = platform.color;
+                ctx.fillRect(platform.x - cameraX, platform.y, platform.width, platform.height);
+                
+                // Add platform texture
+                ctx.fillStyle = '#A0522D';
+                for (let i = 0; i < platform.width; i += 20) {
+                    ctx.fillRect(platform.x - cameraX + i, platform.y, 10, platform.height);
+                }
+            });
+            
+            // Draw coins
+            coinsArray.forEach(coin => {
+                if (!coin.collected) {
+                    const bounce = Math.sin(coin.animation) * 5;
+                    ctx.fillStyle = '#FFD700';
+                    ctx.beginPath();
+                    ctx.arc(
+                        coin.x - cameraX + coin.width/2, 
+                        coin.y + bounce + coin.height/2, 
+                        coin.width/2, 0, Math.PI * 2
+                    );
+                    ctx.fill();
+                    
+                    // Coin shine
+                    ctx.fillStyle = '#FFF8DC';
+                    ctx.beginPath();
+                    ctx.arc(
+                        coin.x - cameraX + coin.width/2 - 3, 
+                        coin.y + bounce + coin.height/2 - 3, 
+                        coin.width/6, 0, Math.PI * 2
+                    );
+                    ctx.fill();
+                }
+            });
+            
+            // Draw enemies
+            enemies.forEach(enemy => {
+                ctx.fillStyle = enemy.color;
+                ctx.fillRect(enemy.x - cameraX, enemy.y, enemy.width, enemy.height);
+                
+                // Enemy shell
+                ctx.fillStyle = '#4B0082';
+                ctx.fillRect(enemy.x - cameraX + 5, enemy.y + 5, enemy.width - 10, enemy.height - 10);
+                
+                // Enemy eyes
+                ctx.fillStyle = 'white';
+                ctx.fillRect(enemy.x - cameraX + 8, enemy.y + 10, 6, 6);
+                ctx.fillRect(enemy.x - cameraX + 18, enemy.y + 10, 6, 6);
+                
+                ctx.fillStyle = 'black';
+                ctx.fillRect(enemy.x - cameraX + 10, enemy.y + 12, 2, 2);
+                ctx.fillRect(enemy.x - cameraX + 20, enemy.y + 12, 2, 2);
+            });
+            
+            // Draw flagpole
+            if (flagpole) {
+                ctx.fillStyle = flagpole.color;
+                ctx.fillRect(flagpole.x - cameraX, flagpole.y, flagpole.width, flagpole.height);
+                
+                // Flag
+                ctx.fillStyle = '#FFFFFF';
+                ctx.beginPath();
+                ctx.moveTo(flagpole.x - cameraX + flagpole.width, flagpole.y);
+                ctx.lineTo(flagpole.x - cameraX + flagpole.width + 40, flagpole.y + 20);
+                ctx.lineTo(flagpole.x - cameraX + flagpole.width, flagpole.y + 40);
+                ctx.closePath();
+                ctx.fill();
+            }
+            
+            // Draw player
+            drawPlayer();
+        }
+        
+        // Draw background elements
+        function drawBackground() {
+            // Mountains
+            ctx.fillStyle = '#5D4037';
+            ctx.beginPath();
+            ctx.moveTo(0 - cameraX * 0.5, 450);
+            ctx.lineTo(200 - cameraX * 0.5, 250);
+            ctx.lineTo(400 - cameraX * 0.5, 450);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.moveTo(300 - cameraX * 0.5, 450);
+            ctx.lineTo(500 - cameraX * 0.5, 200);
+            ctx.lineTo(700 - cameraX * 0.5, 450);
+            ctx.fill();
+            
+            // Clouds
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100 - cameraX * 0.3, 80, 30, 0, Math.PI * 2);
+            ctx.arc(130 - cameraX * 0.3, 70, 40, 0, Math.PI * 2);
+            ctx.arc(160 - cameraX * 0.3, 80, 30, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(500 - cameraX * 0.3, 120, 30, 0, Math.PI * 2);
+            ctx.arc(530 - cameraX * 0.3, 110, 40, 0, Math.PI * 2);
+            ctx.arc(560 - cameraX * 0.3, 120, 30, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        // Draw player with details
+        function drawPlayer() {
+            // Player body
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x - cameraX, player.y, player.width, player.height);
+            
+            // Player overalls
+            ctx.fillStyle = '#1E40AF';
+            ctx.fillRect(player.x - cameraX + 5, player.y + 25, player.width - 10, player.height - 25);
+            
+            // Player hat
+            ctx.fillStyle = player.color;
+            ctx.fillRect(player.x - cameraX - 5, player.y, player.width + 10, 10);
+            ctx.fillRect(player.x - cameraX + player.width/2 - 5, player.y - 10, 10, 10);
+            
+            // Player face
+            ctx.fillStyle = '#FBC02D';
+            ctx.fillRect(player.x - cameraX + 5, player.y + 10, player.width - 10, 15);
+            
+            // Player eyes
+            ctx.fillStyle = 'white';
+            if (player.facingRight) {
+                ctx.fillRect(player.x - cameraX + 18, player.y + 12, 6, 6);
+            } else {
+                ctx.fillRect(player.x - cameraX + 8, player.y + 12, 6, 6);
+            }
+            
+            ctx.fillStyle = 'black';
+            if (player.facingRight) {
+                ctx.fillRect(player.x - cameraX + 20, player.y + 14, 2, 2);
+            } else {
+                ctx.fillRect(player.x - cameraX + 10, player.y + 14, 2, 2);
+            }
+            
+            // Player mustache
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(player.x - cameraX + 8, player.y + 22, player.width - 16, 3);
+        }
+        
+        // Main game loop
+        function gameLoop() {
+            if (!gameRunning) return;
+            
+            update();
+            render();
+            
+            requestAnimationFrame(gameLoop);
+        }
+        
+        // Initial render
+        initGameObjects();
+        render();
+    </script>
+</body>
+</html>
