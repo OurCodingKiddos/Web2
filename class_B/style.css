@@ -1,7 +1,4 @@
 /* 
-  ===========================================================================
-  CODE WONDERLAND - CSS STYLING LESSON FOR KIDS
-  ===========================================================================
   
   Welcome to the most colorful CSS file ever! 
   This file is like a magic paintbox for our website.
@@ -82,7 +79,7 @@ body {
       HEX colors work like this: #RRGGBB (Red, Green, Blue)
       Each letter can be 0-9 or A-F (F is brightest)
     */
-    background-color: #f0f8ff;
+    background-color: #365977;
     
     /* 
       LINE-HEIGHT = Space between lines of text
@@ -122,7 +119,7 @@ body {
       #4ecdc4 = Turquoise blue color (like ocean water)
       The colors blend together like a beautiful sunset!
     */
-    background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+    background: linear-gradient(to left, #ffffff,rgba(255, 0, 0, 0.249), #000000);
     
     /* 
       PADDING with TWO VALUES = Space inside our header

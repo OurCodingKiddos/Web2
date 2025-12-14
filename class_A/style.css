@@ -1,0 +1,300 @@
+/* 
+================================================================================
+WELCOME TO CSS STYLING! 🎨
+CSS = CASCADING STYLE SHEETS
+Think of CSS as the "paint and decorations" for your HTML house!
+================================================================================
+*/
+
+/* 
+🔧 PART 1: CREATING CSS VARIABLES (CUSTOM PROPERTIES)
+Think of these like JavaScript variables, but for colors and fonts!
+We store colors in boxes with names, so we can reuse them.
+:root means "the whole document" (like window in JavaScript)
+*/
+:root {
+    /* This is like: let mainColor = "#ff6b6b" in JavaScript */
+    --main-color: #ff6b6b;      /* Our main pink color - use for important things */
+    --secondary-color: #4ecdc4;  /* Teal color - use for buttons */
+    --accent-color: #ffe66d;     /* Yellow color - use for highlights */
+    --dark-color: #1a535c;       /* Dark blue-green - use for hover effects */
+    --light-color: #f7fff7;      /* Very light green - use for background */
+    --font-main: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+    --font-code: 'Courier New', monospace; /* Computer-style font for code */
+}
+
+/* 
+🎨 PART 2: STYLING THE ENTIRE PAGE (BODY)
+The <body> is like the canvas where everything is drawn
+We'll give it a nice background color and font
+*/
+body {
+    /* font-family tells the browser which fonts to use */
+    font-family: var(--font-main);  /* Using our variable font from above! */
+    
+    /* background-color is like painting the wall */
+    background-color: var(--light-color); /* Light green background */
+    
+    /* padding adds space INSIDE the edges (like bubble wrap inside a box) */
+    padding: 20px; /* 20 pixels of space around all edges */
+    
+    /* margin removes space OUTSIDE the edges */
+    margin: 0; /* No space outside the body - fills the whole window */
+    
+    /* line-height is the space between lines of text */
+    line-height: 1.6; /* Makes text easier to read */
+}
+
+/* 
+📦 PART 3: STYLING OUR MAIN CONTAINER (SECTION)
+Remember the <section> tag in our HTML? This styles it!
+*/
+section {
+    /* background-color makes the inside of our box white */
+    background-color: white;
+    
+    /* border-radius rounds the corners (like rounding paper edges) */
+    border-radius: 15px; /* 15 pixels of rounding */
+    
+    /* padding adds space inside our white box */
+    padding: 25px; /* 25 pixels on all sides inside the box */
+    
+    /* max-width stops the box from getting too wide on big screens */
+    max-width: 600px; /* Maximum width is 600 pixels */
+    
+    /* margin: 0 auto; is a TRICK to center the box!
+       0 = no space top/bottom
+       auto = automatically figure out left/right space */
+    margin: 0 auto;
+    
+    /* box-shadow adds a shadow behind our box (like real paper) */
+    /* The numbers mean: horizontal offset, vertical offset, blur, color */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 
+🏆 PART 4: STYLING THE MAIN TITLE (H1)
+This styles our big "Learning JavaScript Variables" title
+*/
+h1 {
+    /* color changes the text color */
+    color: var(--main-color); /* Using our pink variable! */
+    
+    /* text-align centers the text horizontally */
+    text-align: center;
+    
+    /* font-size makes the text bigger or smaller */
+    /* em is a relative size: 2.5 times the normal size */
+    font-size: 2.5em;
+    
+    /* margin-bottom adds space BELOW the title */
+    margin-bottom: 30px; /* 30 pixels of space below */
+    
+    /* text-shadow adds a shadow behind each letter */
+    /* 2px right, 2px down, 0 blur, with our yellow color */
+    text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* 
+🔄 PART 5: STYLING THE BUTTON CONTAINER
+This creates a flexbox container for our buttons
+We'll use this when we add more buttons later!
+*/
+.button-container {
+    /* display: flex; makes a flexible container for buttons */
+    display: flex;
+    
+    /* justify-content centers buttons horizontally */
+    justify-content: center;
+    
+    /* gap adds space BETWEEN buttons */
+    gap: 15px; /* 15 pixels between each button */
+    
+    /* flex-wrap allows buttons to wrap to next line on small screens */
+    flex-wrap: wrap;
+    
+    /* margin-bottom adds space below the button container */
+    margin-bottom: 30px;
+}
+
+/* 
+🚀 PART 6: STYLING OUR SHOW VARIABLES BUTTON
+This styles the button with id="showVariables"
+Remember: # means "find by ID" in CSS!
+*/
+#showVariables {
+    /* background-color is the button's main color */
+    background-color: var(--secondary-color); /* Teal color */
+    
+    /* color is the TEXT color on the button */
+    color: white; /* White text on teal background */
+    
+    /* font-size makes the button text bigger */
+    font-size: 20px; /* 20 pixels tall */
+    
+    /* padding adds space INSIDE the button */
+    /* 15px top/bottom, 30px left/right */
+    padding: 15px 30px;
+    
+    /* border removes the default button border */
+    border: none; /* "none" means "don't show any border" */
+    
+    /* border-radius makes the button corners round */
+    border-radius: 50px; /* 50 pixels makes it completely round on ends! */
+    
+    /* cursor changes the mouse pointer when hovering */
+    cursor: pointer; /* Shows a hand symbol instead of arrow */
+    
+    /* display: block makes it take the full width available */
+    display: block;
+    
+    /* margin adds space AROUND the button */
+    /* 0 top, auto left/right (center it), 30px bottom */
+    margin: 0 auto 30px;
+    
+    /* transition makes color changes happen smoothly */
+    transition: all 0.3s; /* "all properties, take 0.3 seconds to change" */
+    
+    /* font-family uses our main font */
+    font-family: var(--font-main);
+}
+
+/* 
+🌈 PART 7: BUTTON HOVER EFFECT
+This style only applies when mouse is OVER the button!
+:hover is called a "pseudo-class"
+*/
+#showVariables:hover {
+    /* Change background color when hovering */
+    background-color: var(--dark-color); /* Dark blue-green */
+    
+    /* transform: scale() makes the button grow a little */
+    transform: scale(1.05); /* 1.05 = 5% bigger than normal */
+    
+    /* Add a stronger shadow when hovering */
+    box-shadow: 0 7px 20px rgba(0,0,0,0.2);
+}
+
+/* 
+💾 PART 8: STYLING THE VARIABLE DISPLAY BOX
+This styles the <div> where our variables will appear
+*/
+#variableDisplay {
+    /* background-color is the inside color of the box */
+    background-color: var(--accent-color); /* Our yellow color */
+    
+    /* border adds a border around the box */
+    /* 3px thick, dashed style, with our pink color */
+    border: 3px dashed var(--main-color);
+    
+    /* border-radius rounds the corners */
+    border-radius: 10px; /* 10 pixels of rounding */
+    
+    /* padding adds space inside the box */
+    padding: 20px; /* 20 pixels on all sides */
+    
+    /* font-family uses a computer-style font (like code editors) */
+    font-family: var(--font-code);
+    
+    /* font-size makes the text size */
+    font-size: 18px; /* 18 pixels tall */
+    
+    /* line-height adds space between lines */
+    line-height: 1.6; /* 1.6 times the font size */
+    
+    /* min-height makes sure box is never too small */
+    min-height: 150px; /* At least 150 pixels tall, even when empty */
+    
+    /* animation makes the box fade in when it appears */
+    animation: fadeIn 0.5s ease-out; /* Uses the animation below */
+}
+
+/* 
+✨ PART 9: CREATING AN ANIMATION
+@keyframes defines a sequence of animation steps
+Think of it like instructions: "Start looking like this... end looking like that"
+*/
+@keyframes fadeIn {
+    /* "from" is how it looks at the START of animation */
+    from { 
+        opacity: 0;            /* Invisible (0% visible) */
+        transform: translateY(20px); /* Starts 20px lower than final position */
+    }
+    
+    /* "to" is how it looks at the END of animation */
+    to { 
+        opacity: 1;            /* Fully visible (100% visible) */
+        transform: translateY(0); /* Ends at normal position */
+    }
+}
+
+/* 
+📱 PART 10: MAKING IT WORK ON PHONES (RESPONSIVE DESIGN)
+@media is like an "IF statement" for CSS:
+"IF the screen is 600px wide or less, use these styles instead"
+*/
+@media (max-width: 600px) {
+    /* These styles only apply on phones and small tablets */
+    
+    /* Make the section container smaller on phones */
+    section {
+        padding: 15px; /* Less padding on small screens */
+        margin: 10px;  /* Less margin on small screens */
+    }
+    
+    /* Make the title smaller on phones */
+    h1 {
+        font-size: 1.8em; /* Smaller font size for phone screens */
+    }
+    
+    /* Make the button full width on phones */
+    #showVariables {
+        width: 100%; /* Take 100% of available width */
+        max-width: 300px; /* But never wider than 300px */
+    }
+}
+
+/* 
+🎭 PART 11: BONUS STYLES - VARIABLE CARDS!
+These are extra styles we can use to make our variables look like cards.
+We'll need to UPDATE OUR JAVASCRIPT to use these classes!
+*/
+
+/* 
+UPDATE NEEDED IN JAVASCRIPT ⚠️
+We need to change the showVariables() function to use HTML with classes
+*/
+
+/* Style for each variable card (like a little information card) */
+.variable-card {
+    background: white;                /* White background for the card */
+    border-radius: 10px;              /* Rounded corners */
+    padding: 15px;                    /* Space inside the card */
+    margin: 10px 0;                   /* Space between cards: 10px top/bottom, 0 left/right */
+    border-left: 5px solid var(--secondary-color); /* Colored stripe on left side */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Soft shadow under card */
+    transition: transform 0.3s;       /* Smooth movement when hovering */
+}
+
+/* Hover effect for variable cards */
+.variable-card:hover {
+    transform: translateX(10px); /* Move card 10px to right when hovering */
+}
+
+/* Style for variable names (like "Name:", "Age:") */
+.variable-name {
+    font-weight: bold;                /* Make text bold */
+    color: var(--dark-color);         /* Use our dark color */
+    font-size: 1.2em;                 /* Slightly bigger text (1.2 times normal) */
+}
+
+/* Style for variable values (like "Alex", 10) */
+.variable-value {
+    color: var(--main-color);         /* Use our pink color */
+    font-family: var(--font-code);    /* Use computer font */
+    background-color: #f0f0f0;        /* Light gray background */
+    padding: 5px 10px;                /* Small padding inside */
+    border-radius: 5px;               /* Slightly rounded corners */
+    display: inline-block;            /* Makes background fit text exactly */
+    margin-top: 5px;                  /* Small space above */
+}
