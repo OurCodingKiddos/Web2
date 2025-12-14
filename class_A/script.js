@@ -111,19 +111,7 @@ window.onload = function () {
     // This function's job: Display our variables in a nice way!
     function showVariables() {
         // EVERYTHING inside these {} runs when we CALL this function
-        
-        // -------------------------------------------------------
-        // OLD WAY (Basic - comment this out with // when using new way):
-        // -------------------------------------------------------
-        // displayBox.innerHTML = 
-        //     "Name: "  + name + "<br>" +
-        //     "Age: " + age + "<br>" +
-        //     "Happy: " + isHappy + "<br>" +
-        //     "Birthday: " + birthday;
-        
-        // -------------------------------------------------------
-        // NEW WAY (Fancy with CSS cards!):
-        // -------------------------------------------------------
+
         // innerHTML means: "Replace what's INSIDE the HTML box"
         // The backtick symbols `` let us write MULTI-LINE text
         // ${ } lets us put JavaScript variables INSIDE our text
@@ -147,7 +135,7 @@ window.onload = function () {
              </div>`;
         
         // -------------------------------------------------------
-        // LET'S BREAK DOWN THE NEW WAY: 🧩
+        // LET'S BREAK DOWN
         // -------------------------------------------------------
         // `<div class="variable-card"> = Create a DIV with CSS class
         // <div class="variable-name">Name:</div> = Label in special style
@@ -242,18 +230,11 @@ window.onload = function () {
     let moodBtn = document.getElementById('changeMood');
     let resetBtn = document.getElementById('resetAll');
     
-    // Connect them to functions (but only if buttons exist):
-    if (olderBtn) {
-        olderBtn.addEventListener('click', makeOlder);
-    }
+    // Connect them to functions:
+    olderBtn.addEventListener('click', makeOlder);
+    moodBtn.addEventListener('click', changeMood);
+    resetBtn.addEventListener('click', resetAll);
     
-    if (moodBtn) {
-        moodBtn.addEventListener('click', changeMood);
-    }
-    
-    if (resetBtn) {
-        resetBtn.addEventListener('click', resetAll);
-    }
     
     // =====================================================================
     // SUMMARY OF WHAT WE'VE DONE: 📚
@@ -264,9 +245,6 @@ window.onload = function () {
     // 4. Wrote INSTRUCTIONS (function) to show data
     // 5. CONNECTED button to function
     // 6. ADDED bonus functions for more fun!
-    
-    // 🎉 CONGRATULATIONS! You've just written your first
-    // INTERACTIVE JavaScript program! 🎉
 }
 
 // =====================================================================
@@ -275,11 +253,9 @@ window.onload = function () {
 // Everything above is like a recipe book that's ready to use.
 // The browser will follow our recipes when needed!
 
-// Remember: JavaScript is like giving SUPER POWERS to your website! 💪
+// Remember: JavaScript is like giving SUPER POWERS to your website!
 // With JavaScript, your website can:
 // - Remember things (variables)
 // - Do tasks (functions)
 // - Respond to clicks (event listeners)
 // - Change what's on the screen (innerHTML)
-
-// Keep coding and having fun! 🚀
