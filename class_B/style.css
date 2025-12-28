@@ -1470,7 +1470,7 @@ body {
       When you hover over the button, cursor becomes a pointing hand.
       Universal sign for "clickable"!
     */
-    cursor: pointer;
+    cursor:pointer;
     
     /* 
       10px margin around buttons
