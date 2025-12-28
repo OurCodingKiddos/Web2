@@ -63,7 +63,7 @@ Most HTML blocks have OPENING <tag> and CLOSING </tag>!
 Like putting a toy IN a box and CLOSING the lid.
 ```
 
-## FILE 2: HTML-FOR-KIDS.txt (PART 2/3)
+## FILE 2: HTML (PART 2/3)
 
 ```
 🎨 HTML - TEXT BLOCKS! 🎨
@@ -152,7 +152,7 @@ and I <u>love</u> ice cream!</p>
 <button>Magic Button</button>
 ```
 
-## FILE 3: HTML-FOR-KIDS.txt (PART 3/3)
+## FILE 3: HTML (PART 3/3)
 
 ```
 🎨 HTML - LISTS & SPECIAL BLOCKS! 🎨
@@ -276,7 +276,7 @@ Next: Learn CSS to make it COLORFUL! 🌈
 
 Now let's create the CSS files separately:
 
-## FILE 4: CSS-FOR-KIDS.txt (PART 1/3)
+## FILE 4: CSS (PART 1/3)
 
 ```
 🌈 CSS - PAINTING YOUR WEBPAGE! 🌈
@@ -373,7 +373,7 @@ border-color: = Paint for BORDER lines
    rgb(255, 255, 0) = yellow
 ```
 
-## FILE 5: CSS-FOR-KIDS.txt (PART 2/3)
+## FILE 5: CSS (PART 2/3)
 
 ```
 🌈 CSS - SIZES & SPACES! 🌈
@@ -494,7 +494,7 @@ display: flex; = Makes children line up nicely!
 }
 ```
 
-## FILE 6: CSS-FOR-KIDS.txt (PART 3/3)
+## FILE 6: CSS (PART 3/3)
 
 ```
 🌈 CSS - TEXT & SPECIAL EFFECTS! 🌈
